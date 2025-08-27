@@ -93,7 +93,7 @@ const CreatePlanForm: FC<{ isEdit?: boolean }> = ({ isEdit }) => {
             label="Subscription Type"
             labelSx={StyleUtils.labelStyle}
             inputSx={StyleUtils.inputStyles}
-            MenuProps={{ sx: { height: "350px" } }}
+            MenuProps={{ sx: { height: "21.875rem" } }}
             required={true}
             onBlur={handleBlur}
             selectOptions={subScriptionList}
@@ -111,7 +111,7 @@ const CreatePlanForm: FC<{ isEdit?: boolean }> = ({ isEdit }) => {
             label="Cluster"
             labelSx={StyleUtils.labelStyle}
             inputSx={StyleUtils.inputStyles}
-            MenuProps={{ sx: { height: "350px" } }}
+            MenuProps={{ sx: { height: "21.875rem" } }}
             required={true}
             onBlur={handleBlur}
             selectOptions={clusterData ?? []}
@@ -182,7 +182,7 @@ const CreatePlanForm: FC<{ isEdit?: boolean }> = ({ isEdit }) => {
             label="Tier"
             labelSx={StyleUtils.labelStyle}
             inputSx={StyleUtils.inputStyles}
-            MenuProps={{ sx: { height: "350px" } }}
+            MenuProps={{ sx: { height: "21.875rem" } }}
             onBlur={handleBlur}
             readOnly
             value={tierData?.[0]?.label}
@@ -197,7 +197,7 @@ const CreatePlanForm: FC<{ isEdit?: boolean }> = ({ isEdit }) => {
             label="Product Tags"
             labelSx={StyleUtils.labelStyle}
             inputSx={StyleUtils.inputStyles}
-            MenuProps={{ sx: { height: "350px" } }}
+            MenuProps={{ sx: { height: "21.875rem" } }}
             required={true}
             onBlur={handleBlur}
             selectOptions={tags}

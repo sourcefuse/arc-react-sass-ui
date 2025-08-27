@@ -5,7 +5,7 @@ import AddTenantPage from "./AddTenantPage";
 
 import { PermissionsEnum } from "Constants/enums";
 import NotificationProvider from "Providers/NotificationProvider";
-import * as configurationApiSlice from "redux/app/configurationApiSlice";
+import * as configurationApiSlice from "redux/app/featuresApiSlice";
 import * as tenantApiSlice from "redux/app/tenantManagementApiSlice";
 import { renderWithStore } from "Tests/utils/renderWithStore";
 import {

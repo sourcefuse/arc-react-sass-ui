@@ -21,12 +21,12 @@ export const StepperTabStyles = {
       },
     },
     "& .MuiStepIcon-text": {
-      fontSize: "14px",
+      fontSize: "0.875rem",
       color: "primary.stepperIcon",
     },
     "& .MuiStepLabel-label": {
       color: "primary.stepperText",
-      fontSize: "15px",
+      fontSize: "0.938rem",
       "&.Mui-active": {
         color: "primary.stepperActiveText", // Active step text color
       },

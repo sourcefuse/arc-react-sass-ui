@@ -8,7 +8,7 @@ export const colors: { [key: string]: string } = {
   borderFileZone: "#CACACA",
   border: "#CBCBCB",
   primaryOpacity30: "#ff000030",
-  // Secondary colorss
+  // Secondary colors
   secondary: "#5c0000",
 
   // Surface Colors
@@ -108,7 +108,6 @@ export const colors: { [key: string]: string } = {
   teal: "#5CC6D2",
   teal40: "#5CC6D240",
   DialogActionButton: "#ff0000ff",
-  DialogActionButtonHover: "##005FCC",
-
+  DialogActionButtonHover: "#cc0000",
   featuresChip: "#35D48460",
 } as const;

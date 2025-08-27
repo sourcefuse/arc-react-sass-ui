@@ -7,7 +7,9 @@ import { BrowserRouter } from "react-router-dom";
 import { SnackbarProvider } from "notistack";
 import userEvent from "@testing-library/user-event";
 import { vi } from "vitest";
-import * as configurationApiSlice from "redux/app/configurationApiSlice";
+import * as planItemsApiSlice from "redux/app/planItemsApiSlice";
+import { featuresApiSlice } from "redux/app/featuresApiSlice";
+
 import * as notistack from "notistack";
 
 const mockPlanItem = {
@@ -36,12 +38,12 @@ describe("EditPlanItem", () => {
   beforeEach(() => {
     vi.clearAllMocks();
 
-    vi.spyOn(
-      configurationApiSlice,
-      "useUpdatePlanItemMutation"
-    ).mockReturnValue([mockEditPlanItem, { isLoading: false, reset: vi.fn() }]);
+    vi.spyOn(planItemsApiSlice, "useUpdatePlanItemMutation").mockReturnValue([
+      mockEditPlanItem,
+      { isLoading: false, reset: vi.fn() },
+    ]);
 
-    vi.spyOn(configurationApiSlice, "useGetFeaturesQuery").mockReturnValue({
+    vi.spyOn(featuresApiSlice, "useGetFeaturesQuery").mockReturnValue({
       data: [
         { id: "1", name: "Feature 1" },
         { id: "2", name: "Feature 2" },
@@ -51,7 +53,7 @@ describe("EditPlanItem", () => {
       refetch: vi.fn(),
     });
 
-    vi.spyOn(configurationApiSlice, "useGetPlanItemByIdQuery").mockReturnValue({
+    vi.spyOn(planItemsApiSlice, "useGetPlanItemByIdQuery").mockReturnValue({
       data: mockPlanItem,
       isLoading: false,
       isError: false,
@@ -99,10 +101,7 @@ describe("EditPlanItem", () => {
   });
 
   it("shows loading state while fetching data", () => {
-    vi.spyOn(
-      configurationApiSlice,
-      "useGetPlanItemByIdQuery"
-    ).mockReturnValueOnce({
+    vi.spyOn(planItemsApiSlice, "useGetPlanItemByIdQuery").mockReturnValueOnce({
       isLoading: true,
       refetch: vi.fn(),
     });

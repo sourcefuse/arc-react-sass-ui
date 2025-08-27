@@ -11,7 +11,7 @@ import {
   tagsData,
   tierData,
 } from "../mockData";
-import * as configurationApiSlice from "redux/app/configurationApiSlice";
+import * as configurationApiSlice from "redux/app/featuresApiSlice";
 import { PermissionsEnum } from "Constants/enums";
 import NotificationProvider from "Providers/NotificationProvider";
 import { MemoryRouter } from "react-router";

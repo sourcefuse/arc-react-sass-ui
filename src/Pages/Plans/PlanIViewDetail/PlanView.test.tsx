@@ -1,7 +1,8 @@
 import { fireEvent, screen, waitFor } from "@testing-library/react";
 import { describe, it, vi, beforeEach, expect } from "vitest";
 import PlanView from "./PlanView";
-import * as configurationApi from "redux/app/configurationApiSlice";
+import * as configurationApi from "redux/app/planItemsApiSlice";
+import * as plansApiSlice from "redux/app/plansApiSlice";
 import * as tenantApi from "redux/app/tenantManagementApiSlice";
 import { renderWithStore } from "Tests/utils/renderWithStore";
 
@@ -23,7 +24,7 @@ describe("PlanView Component", () => {
   const mockHandleClose = vi.fn();
 
   beforeEach(() => {
-    vi.spyOn(configurationApi, "useGetPlanByIdQuery").mockReturnValue({
+    vi.spyOn(plansApiSlice, "useGetPlanByIdQuery").mockReturnValue({
       data: planData,
       isLoading: false,
       isFetching: false,

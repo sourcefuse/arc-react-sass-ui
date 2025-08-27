@@ -6,7 +6,7 @@ import { useLocation } from "react-router-dom";
 import sideNavConfig from "./sideNavConfig";
 import SideNavLink from "./SideNavLink";
 import useConfig from "Hooks/useConfig";
-import { useGetAdminSettingsQuery } from "redux/app/configurationApiSlice";
+import { useGetAdminSettingsQuery } from "redux/app/adminSettingsApiSlice";
 import { useSelector } from "react-redux";
 import { RootState } from "redux/store";
 

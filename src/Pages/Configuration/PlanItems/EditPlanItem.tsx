@@ -6,12 +6,13 @@ import React, { useMemo } from "react";
 import { BreadcrumbsRoute } from "use-react-router-breadcrumbs";
 import RenderButton from "./RenderButton";
 import PlanItemForm from "./PlanItemForm";
+import { apiSlice } from "redux/apiSlice";
 import {
-  configurationApiSlice,
   planItemByIdProvisionTag,
   useGetPlanItemByIdQuery,
   useUpdatePlanItemMutation,
-} from "redux/app/configurationApiSlice";
+} from "redux/app/planItemsApiSlice";
+
 import { FormikHelpers } from "formik";
 import { PlanItemFormValues } from "./types";
 import { useSnackbar } from "notistack";
@@ -85,9 +86,7 @@ const EditPlanItem = () => {
       setTimeout(
         () =>
           store.dispatch(
-            configurationApiSlice.util.invalidateTags(
-              planItemByIdProvisionTag(planItemId)
-            )
+            apiSlice.util.invalidateTags(planItemByIdProvisionTag(planItemId))
           ),
         2000
       );

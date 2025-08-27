@@ -5,7 +5,7 @@ import { Table } from "Components/Table";
 import {
   useGetPlanItemsCountQuery,
   useLazyGetPlanItemsQuery,
-} from "redux/app/configurationApiSlice";
+} from "redux/app/planItemsApiSlice";
 import { DEFAULT_LIMIT, DEFAULT_OFFSET } from "Constants/helper";
 import { Plan, planItemsColumn } from "./utils";
 import { QueryFilterObject } from "redux/app/types";

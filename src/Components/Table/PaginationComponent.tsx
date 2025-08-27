@@ -11,7 +11,7 @@ import {
   defaultRowsPerPageOptions,
   PaginationComponentWithToolTip,
 } from "./helper";
-import { useGetAdminSettingsQuery } from "redux/app/configurationApiSlice";
+import { useGetAdminSettingsQuery } from "redux/app/adminSettingsApiSlice";
 import { DEFAULT_LIMIT } from "Constants/helper";
 import { useQueryHookWithPermission } from "Hooks/useQueryHookWithPermission";
 import { PermissionsEnum } from "Constants/enums";

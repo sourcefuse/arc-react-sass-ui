@@ -55,7 +55,7 @@ import { PermissionWrapper } from "Components/PermissionWrapper";
 import ErrorView from "Components/Error/ErrorView";
 import { DEFAULT_LIMIT, DEFAULT_OFFSET } from "Constants/helper";
 import { useQueryHookWithPermission } from "Hooks/useQueryHookWithPermission";
-import { useGetAdminSettingsQuery } from "redux/app/configurationApiSlice";
+import { useGetAdminSettingsQuery } from "redux/app/adminSettingsApiSlice";
 export interface AnyObject {
   [key: string]: any; // NOSONAR
 }

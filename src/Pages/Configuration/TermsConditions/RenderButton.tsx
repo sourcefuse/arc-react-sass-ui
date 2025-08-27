@@ -9,7 +9,7 @@ interface IProps {
   disableSubmitBtn?: boolean;
   hideCancelButton?: boolean;
 }
-const btnSize = { width: "130px", height: "50px" };
+const btnSize = { width: "8.125rem", height: "3.125rem" };
 
 function RenderButton(props: IProps) {
   const { handleCancel, handleSubmit, disableSubmitBtn, hideCancelButton } =

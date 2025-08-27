@@ -97,7 +97,7 @@ function ClustersForm({ clusterData, isClusterLoading }: ClustersFormProps) {
             sx={{
               ml: "1rem",
               mt: 0.2,
-              fontSize: "12px",
+              fontSize: "0.75rem",
               color: "primary.stepperActiveText",
             }}
           >

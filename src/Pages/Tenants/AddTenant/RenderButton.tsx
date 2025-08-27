@@ -38,7 +38,7 @@ const RenderButton: React.FC<ButtonRenderProps> = (props) => {
           name="cancel"
           onClick={handleCancel}
           disabled={isAddTenantLoader}
-          sx={{ width: "130px", height: "50px" }}
+          sx={{ width: "8.125rem", height: "3.125rem" }}
         >
           Cancel
         </Button>
@@ -50,7 +50,7 @@ const RenderButton: React.FC<ButtonRenderProps> = (props) => {
             variant="outlined"
             onClick={handleBack}
             disabled={isAddTenantLoader}
-            sx={{ width: "130px", height: "50px", mr: 2 }}
+            sx={{ width: "8.125rem", height: "3.125rem", mr: 2 }}
           >
             Back
           </Button>
@@ -61,7 +61,7 @@ const RenderButton: React.FC<ButtonRenderProps> = (props) => {
             variant="contained"
             color="primary"
             onClick={handleNext}
-            sx={{ width: "130px", height: "50px" }}
+            sx={{ width: "8.125rem", height: "3.125rem" }}
             disabled={shouldDisableNext} // Uncomment to disable button based on form validity
           >
             Next
@@ -74,7 +74,7 @@ const RenderButton: React.FC<ButtonRenderProps> = (props) => {
             color="primary"
             onClick={() => handleSubmit()}
             isLoading={isAddTenantLoader}
-            sx={{ width: "130px", height: "50px" }}
+            sx={{ width: "8.125rem", height: "3.125rem" }}
             disabled={!isFileUploaded}
           >
             {isEdit ? "Update Tenant" : "Add Tenant"}

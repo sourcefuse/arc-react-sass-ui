@@ -6,7 +6,8 @@ import { Provider } from "react-redux";
 import { store } from "../../redux/store";
 import * as tenantApiSlice from "redux/app/tenantManagementApiSlice";
 import * as notistack from "notistack";
-import * as configurationApiSlice from "redux/app/configurationApiSlice";
+import * as configurationApiSlice from "redux/app/planItemsApiSlice";
+import * as plansApiSlice from "redux/app/plansApiSlice";
 
 const mockPlanItems = [
   {
@@ -60,15 +61,15 @@ describe("EditPlanPage", () => {
   beforeEach(async () => {
     vi.clearAllMocks();
 
-    vi.spyOn(configurationApiSlice, "useLazyGetPlanByIdQuery").mockReturnValue([
+    vi.spyOn(plansApiSlice, "useLazyGetPlanByIdQuery").mockReturnValue([
       mockGetPlanById,
       { data: mockResponse, isLoading: false, reset: vi.fn() },
       { lastArg: { id: "", filter: {} } },
     ]);
-    vi.spyOn(
-      configurationApiSlice,
-      "useUpdatePlanAsCustomMutation"
-    ).mockReturnValue([mockUpdatePlan, { isLoading: false, reset: vi.fn() }]);
+    vi.spyOn(plansApiSlice, "useUpdatePlanAsCustomMutation").mockReturnValue([
+      mockUpdatePlan,
+      { isLoading: false, reset: vi.fn() },
+    ]);
     vi.spyOn(configurationApiSlice, "useLazyGetPlanItemsQuery").mockReturnValue(
       [
         mockGetPlanItems,

@@ -7,7 +7,7 @@ import { RouteConstant } from "Constants/routeConstant";
 import {
   useLazyGetPlanItemsCountQuery,
   useLazyGetPlanItemsQuery,
-} from "redux/app/configurationApiSlice";
+} from "redux/app/planItemsApiSlice";
 import { DEFAULT_LIMIT, DEFAULT_OFFSET } from "Constants/helper";
 import {
   filterConfig,

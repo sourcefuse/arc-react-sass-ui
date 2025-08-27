@@ -6,7 +6,9 @@ import { Provider } from "react-redux";
 import { store } from "../../redux/store";
 import * as tenantApiSlice from "redux/app/tenantManagementApiSlice";
 import * as notistack from "notistack";
-import * as configurationApiSlice from "redux/app/configurationApiSlice";
+import * as planItemsApiSlice from "redux/app/planItemsApiSlice";
+import * as plansApiSlice from "redux/app/plansApiSlice";
+import * as currenciesApiSlice from "redux/app/currenciesApiSlice";
 import userEvent from "@testing-library/user-event";
 
 const mockPlanItems = [
@@ -82,20 +84,18 @@ describe("AddPlanPage", () => {
     vi.clearAllMocks();
 
     // Spy on useCreatePlanMutation
-    vi.spyOn(configurationApiSlice, "useCreatePlanMutation").mockReturnValue([
+    vi.spyOn(plansApiSlice, "useCreatePlanMutation").mockReturnValue([
       mockCreatePlan,
       { isLoading: false, reset: vi.fn() },
     ]);
 
-    vi.spyOn(configurationApiSlice, "useLazyGetPlanItemsQuery").mockReturnValue(
-      [
-        mockGetPlanItems,
-        { data: mockPlanItems, isLoading: false, isError: false },
-        { lastArg: {} },
-      ]
-    );
+    vi.spyOn(planItemsApiSlice, "useLazyGetPlanItemsQuery").mockReturnValue([
+      mockGetPlanItems,
+      { data: mockPlanItems, isLoading: false, isError: false },
+      { lastArg: {} },
+    ]);
     vi.spyOn(
-      configurationApiSlice,
+      planItemsApiSlice,
       "useLazyGetPlanItemsCountQuery"
     ).mockReturnValue([
       mockGetPlanItemsCount,
@@ -138,7 +138,7 @@ describe("AddPlanPage", () => {
       isError: false,
       refetch: vi.fn(),
     });
-    vi.spyOn(configurationApiSlice, "useLazyGetCurrencyQuery").mockReturnValue([
+    vi.spyOn(currenciesApiSlice, "useLazyGetCurrencyQuery").mockReturnValue([
       mockGetCurrencyData,
       { data: mockCurrency, isLoading: false, isError: false },
       { lastArg: undefined },

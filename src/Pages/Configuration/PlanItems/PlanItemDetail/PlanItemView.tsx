@@ -1,7 +1,7 @@
 import Button from "Components/Button";
 import DetailCard from "Components/DetailComponent/DetailCard";
 import { useMemo } from "react";
-import { useGetPlanItemByIdQuery } from "redux/app/configurationApiSlice";
+import { useGetPlanItemByIdQuery } from "redux/app/planItemsApiSlice";
 import { Section } from "types/modalView.types";
 import CircularLoader from "Components/CircularLoader/CircularLoader";
 import StatusChipSection from "Components/StatusChipSection/StatusChipSection";

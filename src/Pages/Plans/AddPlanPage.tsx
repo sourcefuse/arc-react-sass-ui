@@ -12,10 +12,8 @@ import {
   initialValues,
   planValidationSchema,
 } from "./utils";
-import {
-  useCreatePlanMutation,
-  useLazyGetCurrencyQuery,
-} from "redux/app/configurationApiSlice";
+import { useCreatePlanMutation } from "redux/app/plansApiSlice";
+import { useLazyGetCurrencyQuery } from "redux/app/currenciesApiSlice";
 import { CurrencyCode } from "Helpers/utils";
 
 const AddPlanPage = () => {

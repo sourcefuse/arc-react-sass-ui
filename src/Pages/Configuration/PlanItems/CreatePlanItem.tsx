@@ -6,7 +6,7 @@ import React from "react";
 import { BreadcrumbsRoute } from "use-react-router-breadcrumbs";
 import RenderButton from "./RenderButton";
 import PlanItemForm from "./PlanItemForm";
-import { useCreatePlanItemsMutation } from "redux/app/configurationApiSlice";
+import { useCreatePlanItemsMutation } from "redux/app/planItemsApiSlice";
 import { FormikHelpers } from "formik";
 import { PlanItemFormValues } from "./types";
 import { useSnackbar } from "notistack";

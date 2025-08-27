@@ -17,7 +17,7 @@ import {
 import {
   useLazyGetPlanByIdQuery,
   useUpdatePlanAsCustomMutation,
-} from "redux/app/configurationApiSlice";
+} from "redux/app/plansApiSlice";
 import { useEffect, useMemo } from "react";
 import EditPlanPageLoader from "./EditPlanPageLoader";
 

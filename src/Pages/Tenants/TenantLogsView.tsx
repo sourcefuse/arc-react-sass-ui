@@ -66,7 +66,7 @@ const TenantLogsView: React.FC<ITenantLogsViewProps> = ({
       <CardHeader
         title={
           <>
-            <span style={{ marginRight: "5px" }}>
+            <span style={{ marginRight: "0.313rem" }}>
               Provisioning Logs - {name}
             </span>
             <IconButton

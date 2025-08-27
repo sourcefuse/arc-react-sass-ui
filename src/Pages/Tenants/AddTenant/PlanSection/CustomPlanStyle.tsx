@@ -27,7 +27,7 @@ const BORDER_WIDTH = "0.0625rem !important";
 const getBaseInputStyle = (options?: { isError?: boolean }) => {
   const { isError = false } = options || {};
   return {
-    borderRadius: "10px",
+    borderRadius: "0.625rem",
     paddingBottom: "0.3rem",
     paddingLeft: "0.2rem",
     height: "3.5rem",

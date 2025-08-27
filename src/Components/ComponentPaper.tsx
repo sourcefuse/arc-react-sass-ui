@@ -10,7 +10,7 @@ const Paper = styled(
 )(({ theme }: { theme: MUITheme }) => ({
   padding: theme.spacing(PADDING_SPACING),
   marginTop: theme.spacing(MARGIN_SPACING),
-  border: "1px solid",
+  border: "0.063rem solid",
   borderColor: theme?.palette?.secondary?.main,
   width: "100%",
   overflowX: "auto",

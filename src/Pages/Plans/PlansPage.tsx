@@ -25,7 +25,7 @@ import { PermissionsEnum } from "Constants/enums";
 import { DEFAULT_LIMIT, DEFAULT_OFFSET } from "Constants/helper";
 import { BlockOutlined } from "@mui/icons-material";
 import ConfirmDialog from "Components/ConfirmDialog/ConfirmDialog";
-import { useUpdatePlanAsSuspendMutation } from "redux/app/configurationApiSlice";
+import { useUpdatePlanAsSuspendMutation } from "redux/app/plansApiSlice";
 import { useSnackbar } from "notistack";
 import { PlanStatus } from "redux/app/types";
 import CustomModal from "Components/CustomModal";

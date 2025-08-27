@@ -9,7 +9,7 @@ import Button from "Components/Button";
 import { FORM_CONTROL_CONFIG, IFormAdminSettings } from "./settings.utils";
 import { AdminSettingValueEnum } from "Constants/enums/settings.enum";
 import FormAutoCompleteInput from "Components/Forms/FormAutoCompleteInput";
-import { useGetAdminSettingsQuery } from "redux/app/configurationApiSlice";
+import { useGetAdminSettingsQuery } from "redux/app/adminSettingsApiSlice";
 import { TextField } from "@mui/material";
 import { IAutoCompleteOptions } from "Components/AutoCompleteInput/AutoCompleteInput";
 import { PermissionWrapper } from "Components/PermissionWrapper";

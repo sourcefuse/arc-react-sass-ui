@@ -1,10 +1,8 @@
 import Button from "Components/Button";
 import DetailCard from "Components/DetailComponent/DetailCard";
 import { useEffect, useMemo, useState } from "react";
-import {
-  useGetPlanByIdQuery,
-  useLazyGetPlanItemByIdQuery,
-} from "redux/app/configurationApiSlice";
+import { useLazyGetPlanItemByIdQuery } from "redux/app/planItemsApiSlice";
+import { useGetPlanByIdQuery } from "redux/app/plansApiSlice";
 import { Section } from "types/modalView.types";
 import CircularLoader from "Components/CircularLoader/CircularLoader";
 import {

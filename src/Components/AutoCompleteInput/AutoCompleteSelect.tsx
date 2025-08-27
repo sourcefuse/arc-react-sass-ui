@@ -72,7 +72,7 @@ function AutoCompleteSelect({
           InputProps={{
             ...params.InputProps,
             sx: {
-              borderRadius: "10px",
+              borderRadius: "0.625rem",
               paddingTop: "1.2rem !important",
               paddingLeft: "0.5625rem !important",
               "&.MuiOutlinedInput-root": {

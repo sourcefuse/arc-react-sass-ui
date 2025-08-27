@@ -79,7 +79,7 @@ export const commonConfig: ThemeOptions = {
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: "50px",
+          borderRadius: "3.125rem",
           textTransform: "none",
         },
       },
@@ -90,7 +90,7 @@ export const commonConfig: ThemeOptions = {
           "& .MuiDrawer-paper": {
             margin: "1%",
             top: "10%",
-            borderRadius: "10px",
+            borderRadius: "0.625rem",
             height: "85%",
           },
         },
@@ -99,7 +99,7 @@ export const commonConfig: ThemeOptions = {
     MuiPaper: {
       styleOverrides: {
         root: {
-          boxShadow: `0 0 0 1px ${colors.shadow}, 0 1px 3px ${colors.shadow}`,
+          boxShadow: `0 0 0 0.063rem ${colors.shadow}, 0 0.063rem 0.188rem ${colors.shadow}`,
         },
       },
     },

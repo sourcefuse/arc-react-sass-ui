@@ -32,12 +32,12 @@ const labelStyleAdornment = (options?: { focused?: boolean; value?: any }) => {
   };
 };
 
-const BORDER_WIDTH = "1px !important";
+const BORDER_WIDTH = "0.063rem !important";
 
 const getBaseInputStyle = (options?: { isError?: boolean }) => {
   const { isError = false } = options || {};
   return {
-    borderRadius: "10px",
+    borderRadius: "0.625rem",
     paddingBottom: "0.3rem",
     height: "3.5rem",
     color: "primary.inputField",
@@ -80,9 +80,9 @@ const inputAdornment = {
   height: "100%",
   display: "flex",
   alignItems: "center",
-  borderRight: "1px solid #ccc",
-  paddingRight: "4px",
-  paddingLeft: "3px",
+  borderRight: "0.063rem solid #ccc",
+  paddingRight: "0.25rem",
+  paddingLeft: "0.188rem",
 };
 
 const selectBox = {

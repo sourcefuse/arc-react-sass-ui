@@ -35,7 +35,7 @@ const PageHeader: React.FC<IPageHeaderProps> = ({
               color: `${
                 showBackground ? "background.paper" : "secondary.main"
               }`,
-              mt: "4px",
+              mt: "0.25rem",
             }}
           >
             <b> {pageName} </b>

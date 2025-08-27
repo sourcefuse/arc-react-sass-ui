@@ -14,7 +14,7 @@ import CustomModal from "Components/CustomModal";
 import {
   useLazyGetFeaturesCountQuery,
   useLazyGetFeaturesQuery,
-} from "redux/app/configurationApiSlice";
+} from "redux/app/featuresApiSlice";
 import { FeatureNode } from "redux/app/types";
 import CloseIcon from "@mui/icons-material/Close";
 

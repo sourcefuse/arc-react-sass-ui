@@ -17,7 +17,7 @@ const radioStyle = ({
     width: { xs: getSize("xs"), sm: getSize("sm"), md: getSize("md") },
     height: { xs: getSize("xs"), sm: getSize("sm"), md: getSize("md") },
     borderRadius: "50%",
-    border: "2px solid",
+    border: "0.125rem solid",
     borderColor: checked ? checkedColor : uncheckedColor,
     display: "flex",
     alignItems: "center",

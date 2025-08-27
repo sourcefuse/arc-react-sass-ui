@@ -31,16 +31,16 @@ const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
       <DialogContent sx={{ textAlign: "center", p: 3 }}>
         <IconButton
           sx={{
-            backgroundColor: "#E8F0FE",
+            backgroundColor: colors.surfaceLight,
             color: colors.DialogActionButton,
             mb: 1.5,
-            "&:hover": { backgroundColor: "#E8F0FE" },
+            "&:hover": { backgroundColor: colors.surfaceLight },
           }}
           disableRipple
         >
           <InfoOutlinedIcon fontSize="large" />
         </IconButton>
-        <DialogTitle sx={{ fontWeight: "bold", fontSize: "18px", p: 0 }}>
+        <DialogTitle sx={{ fontWeight: "bold", fontSize: "1.125rem", p: 0 }}>
           {title}
         </DialogTitle>
         <Typography sx={{ color: "gray", mt: 1 }}>{description}</Typography>

@@ -4,7 +4,8 @@ import { SnackbarProvider } from "notistack";
 import { describe, it, beforeEach, expect, vi } from "vitest";
 import { MemoryRouter } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
-import * as configurationApiSlice from "redux/app/configurationApiSlice";
+import * as planItemsApiSlice from "redux/app/planItemsApiSlice";
+import * as featuresApiSlice from "redux/app/featuresApiSlice";
 import * as authApiSlice from "redux/auth/authApiSlice";
 import * as notistack from "notistack";
 import { renderWithStore } from "Tests/utils/renderWithStore";
@@ -17,16 +18,13 @@ describe("Create Plan Item", () => {
     vi.clearAllMocks();
 
     // Spy on useCreatePlanItemsMutation
-    vi.spyOn(
-      configurationApiSlice,
-      "useCreatePlanItemsMutation"
-    ).mockReturnValue([
+    vi.spyOn(planItemsApiSlice, "useCreatePlanItemsMutation").mockReturnValue([
       mockCreatePlanItem,
       { isLoading: false, reset: vi.fn() },
     ]);
 
     // Spy on useGetFeaturesQuery
-    vi.spyOn(configurationApiSlice, "useGetFeaturesQuery").mockReturnValue({
+    vi.spyOn(featuresApiSlice, "useGetFeaturesQuery").mockReturnValue({
       data: [
         { id: "1", name: "Feature 1" },
         { id: "2", name: "Feature 2" },

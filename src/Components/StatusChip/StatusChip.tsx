@@ -36,7 +36,7 @@ const StatusChip: React.FC<IStatusChipProps> = ({
         ".MuiChip-label": {
           display: "flex",
           alignItems: "center",
-          marginTop: "1px",
+          marginTop: "0.063rem",
         },
       }}
       onClick={

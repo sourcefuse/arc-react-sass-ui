@@ -34,8 +34,8 @@ const loaderContainer = {
 };
 
 const commonStyles = {
-  borderLeft: "1px solid",
-  borderBottom: "1px solid",
+  borderLeft: "0.063rem solid",
+  borderBottom: "0.063rem solid",
   borderColor: "divider",
 };
 

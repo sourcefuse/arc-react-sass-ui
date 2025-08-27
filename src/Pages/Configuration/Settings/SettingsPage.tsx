@@ -13,7 +13,7 @@ import {
 import {
   useGetAdminSettingsQuery,
   useUpdateAdminSettingsMutation,
-} from "redux/app/configurationApiSlice";
+} from "redux/app/adminSettingsApiSlice";
 import { useEffect, useMemo, useState } from "react";
 import { FormikHelpers } from "formik";
 import BackdropLoader from "Components/BackdropLoader";

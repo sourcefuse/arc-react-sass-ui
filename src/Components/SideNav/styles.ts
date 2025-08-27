@@ -1,7 +1,7 @@
 const styles = {
   link: {
-    height: "45px",
-    borderRadius: "28px",
+    height: "2.813rem",
+    borderRadius: "1.75rem",
     width: "90%",
     "&:hover": {
       backgroundColor: "primary.p50",

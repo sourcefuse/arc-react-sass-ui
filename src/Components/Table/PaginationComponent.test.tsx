@@ -7,9 +7,9 @@ import { PermissionsEnum } from "Constants/enums";
 const mockSetOffset = vi.fn();
 const mockSetLimit = vi.fn();
 
-vi.mock("redux/app/configurationApiSlice", async (importOriginal) => {
+vi.mock("redux/app/adminSettingsApiSlice", async (importOriginal) => {
   const originalModule = await importOriginal<
-    typeof import("redux/app/configurationApiSlice")
+    typeof import("redux/app/adminSettingsApiSlice")
   >();
 
   return {

@@ -3,7 +3,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { selectConfigData } from "redux/config/configSlice";
 import { useSelector } from "react-redux";
-const border = "1px solid  #D9D9D9;";
+const border = "0.063rem solid  #D9D9D9;";
 
 const Home = () => {
   const configData = useSelector(selectConfigData);
@@ -14,7 +14,7 @@ const Home = () => {
         xs={12}
         md={5}
         sx={{
-          height: "425px",
+          height: "26.563rem",
           display: "flex",
           alignItems: "center",
           borderBottom: border,

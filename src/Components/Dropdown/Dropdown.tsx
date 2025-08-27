@@ -170,7 +170,7 @@ const Dropdown: React.FC<Props> = ({
 
   const autoCompleteTheme: SxProps<Theme> = {
     "& .MuiOutlinedInput-root": {
-      padding: "1px",
+      padding: "0.063rem",
     },
     "& .MuiOutlinedInput-notchedOutline": {
       ...(disableBorder && { border: "none" }),

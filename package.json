@@ -17,7 +17,7 @@
     "test:all": "cross-env set CI=true && react-scripts test && npm run lint",
     "prepare": "husky install",
     "pre-commit": "lint-staged",
-    "coverage": "cross-env CI=true npm test -- --env=jsdom --coverage",
+    "coverage": "cross-env CI=true vitest run --coverage",
     "cypress": "cypress open"
   },
   "dependencies": {

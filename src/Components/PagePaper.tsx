@@ -13,7 +13,7 @@ const PagePaper = ({
   description?: string;
 }) => {
   return (
-    <Paper sx={{ padding: " 20px 0 0 15px", boxShadow: "none" }}>
+    <Paper sx={{ padding: " 1.25rem 0 0 0.938rem", boxShadow: "none" }}>
       {title && (
         <Typography
           sx={{ pl: 2, pt: 2, textTransform: "capitalize", fontWeight: "bold" }}

@@ -2,7 +2,7 @@ import { Grid } from "@mui/material";
 import FormInput from "Components/Forms/FormInput";
 import { useFormikContext } from "formik";
 import { StyleUtils } from "Helpers/styleUtils";
-import { useGetFeaturesQuery } from "redux/app/configurationApiSlice";
+import { useGetFeaturesQuery } from "redux/app/featuresApiSlice";
 import { useMemo } from "react";
 import { PlanItemFormValues } from "./types";
 import EditPlanItemLoader from "./EditPlanItemLoader";

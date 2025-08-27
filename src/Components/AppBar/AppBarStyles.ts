@@ -1,6 +1,6 @@
 export const appBarStyles = {
   menuButton: {
-    borderRadius: "3.125rem", // 50px to rem
+    borderRadius: "3.125rem", // 3.125rem to rem
     color: "secondary.icon",
     padding: "0.313rem 1.25rem",
     textTransform: "capitalize",

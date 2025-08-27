@@ -39,7 +39,7 @@ const SearchBar: React.FC<{
   }, [searchQuery, searchFilter]);
 
   return (
-    <Stack direction="row" sx={{ px: "10px" }}>
+    <Stack direction="row" sx={{ px: "0.625rem" }}>
       <Input
         id="search-bar"
         className="text"

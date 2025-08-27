@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Box, Button, Typography } from "@mui/material";
-import { useUploadFeatureCsvMutation } from "redux/app/configurationApiSlice";
+import { useUploadFeatureCsvMutation } from "redux/app/featuresApiSlice";
 import { useSnackbar } from "notistack";
 import BackdropLoader from "Components/BackdropLoader";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";

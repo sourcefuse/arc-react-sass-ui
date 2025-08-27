@@ -8,7 +8,7 @@ import {
   standardPlanData,
   tagsData,
 } from "Pages/Tenants/mockData";
-import * as configurationApiSlice from "redux/app/configurationApiSlice";
+import * as configurationApiSlice from "redux/app/featuresApiSlice";
 import * as tenantApiSlice from "redux/app/tenantManagementApiSlice";
 import { renderWithStore } from "Tests/utils/renderWithStore";
 import { vi } from "vitest";

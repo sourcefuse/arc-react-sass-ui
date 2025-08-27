@@ -3,7 +3,7 @@ import PlanItemsListing from "./PlanItemsListing";
 import { MemoryRouter } from "react-router-dom";
 import { describe, it, beforeEach, expect, vi } from "vitest";
 import { renderWithStore } from "Tests/utils/renderWithStore";
-import * as configurationApiSlice from "redux/app/configurationApiSlice";
+import * as configurationApiSlice from "redux/app/planItemsApiSlice";
 import * as permissionHook from "Hooks/usePermission";
 
 const mockPlanItems = [

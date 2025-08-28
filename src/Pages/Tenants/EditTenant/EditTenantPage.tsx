@@ -29,7 +29,7 @@ import AddTenantDetails from "../AddTenant/AddTenantDetail";
 import { IFile, TenantDataType } from "type/tenant.type";
 import { DEFAULT_LIMIT, DEFAULT_OFFSET } from "Constants/helper";
 import useConfig from "Hooks/useConfig";
-import { isEqual } from "lodash";
+import { isEqual } from "underscore";
 
 const useFileAndPlanManager = (tenantData: TenantDataType | undefined) => {
   const [files, setFiles] = useState<File[]>([]);
@@ -177,6 +177,7 @@ const useEditFormHandler = ({
       actions.resetForm({ values: initialAddTenantValues });
       enqueueSnackbar("Tenant updated successfully!", { variant: "success" });
       onNavigateToTenantList();
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {}
   };
 

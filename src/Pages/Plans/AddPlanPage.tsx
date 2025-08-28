@@ -44,6 +44,7 @@ const AddPlanPage = () => {
       helpers.resetForm({ values: initialValues });
       enqueueSnackbar("Plan Created Successfully", { variant: "success" });
       navigate(RouteConstant.CONFIGURATION_PLANS);
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {}
   };
 

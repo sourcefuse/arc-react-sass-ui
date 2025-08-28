@@ -110,5 +110,5 @@ export const apiSlice = createApi({
   reducerPath: "api",
   tagTypes: ["PlanItem"],
   baseQuery: baseQueryWithReauth,
-  endpoints: (builder) => ({}),
+  endpoints: () => ({}),
 });

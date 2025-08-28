@@ -51,6 +51,7 @@ export const LeadView: FC<Props> = ({ handleCloseModal, lead }) => {
       setIsDialogOpen(false);
       navigate(`/tenants/create-tenant/${data.leadId}`);
       await updateLead({ leadId: data.leadId });
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {}
   };
   const toggle = (event: React.MouseEvent<HTMLButtonElement>) => {

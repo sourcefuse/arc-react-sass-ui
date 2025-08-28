@@ -24,44 +24,42 @@ const commonStyles = {
     height: "1.25rem !important",
   },
 };
-const StyledMaterialDesignContent = styled(MaterialDesignContent)(
-  ({ theme }) => ({
-    "&.notistack-MuiContent-default": {
-      ...commonStyles.root,
-      paddingInline: "3rem",
+const StyledMaterialDesignContent = styled(MaterialDesignContent)(() => ({
+  "&.notistack-MuiContent-default": {
+    ...commonStyles.root,
+    paddingInline: "3rem",
+  },
+  "&.notistack-MuiContent-success": {
+    ...commonStyles.root,
+    flexWrap: "nowrap !important",
+    svg: {
+      ...commonStyles.icon,
+      color: colors.success,
     },
-    "&.notistack-MuiContent-success": {
-      ...commonStyles.root,
-      flexWrap: "nowrap !important",
-      svg: {
-        ...commonStyles.icon,
-        color: colors.success,
-      },
+  },
+  "&.notistack-MuiContent-error": {
+    ...commonStyles.root,
+    flexWrap: "nowrap !important",
+    svg: {
+      ...commonStyles.icon,
+      color: colors.destructive,
     },
-    "&.notistack-MuiContent-error": {
-      ...commonStyles.root,
-      flexWrap: "nowrap !important",
-      svg: {
-        ...commonStyles.icon,
-        color: colors.destructive,
-      },
+  },
+  "&.notistack-MuiContent-warning": {
+    ...commonStyles.root,
+    svg: {
+      ...commonStyles.icon,
+      color: colors.warning,
     },
-    "&.notistack-MuiContent-warning": {
-      ...commonStyles.root,
-      svg: {
-        ...commonStyles.icon,
-        color: colors.warning,
-      },
+  },
+  "&.notistack-MuiContent-info": {
+    ...commonStyles.root,
+    svg: {
+      ...commonStyles.icon,
+      color: colors.inactiveGray,
     },
-    "&.notistack-MuiContent-info": {
-      ...commonStyles.root,
-      svg: {
-        ...commonStyles.icon,
-        color: colors.inactiveGray,
-      },
-    },
-  })
-);
+  },
+}));
 const NotificationProvider = ({ children }: React.PropsWithChildren) => {
   return (
     <SnackbarProvider

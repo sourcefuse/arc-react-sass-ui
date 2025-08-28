@@ -96,7 +96,7 @@ export const getInvoiceTableColumns = (
       ),
       accessorKey: "action",
       cell: (row) => (
-        <ActionButtonsContainer handleDownlod={downloadFn} row={row} />
+        <ActionButtonsContainer handleDownload={downloadFn} row={row} />
       ),
       enableSorting: false,
       permissions: [PermissionsEnum.DownloadInvoice],

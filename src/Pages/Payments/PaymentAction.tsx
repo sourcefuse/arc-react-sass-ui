@@ -8,12 +8,12 @@ import { IBillingInvoice } from "redux/app/types/invoice.type";
 
 interface ActionButtonsContainerProps {
   row: CellContext<IBillingInvoice, unknown>;
-  handleDownlod: (invoice: IBillingInvoice) => void;
+  handleDownload: (invoice: IBillingInvoice) => void;
 }
 
 export const ActionButtonsContainer: React.FC<ActionButtonsContainerProps> = ({
   row,
-  handleDownlod,
+  handleDownload,
 }) => {
   return (
     <Stack direction="row" spacing={1} justifyContent="center">
@@ -25,7 +25,7 @@ export const ActionButtonsContainer: React.FC<ActionButtonsContainerProps> = ({
             aria-label="download"
             onClick={(e) => {
               e.stopPropagation();
-              handleDownlod(row?.row?.original);
+              handleDownload(row?.row?.original);
             }}
           >
             <SaveAltIcon />

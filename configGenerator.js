@@ -17,11 +17,18 @@ import yargs from "yargs";
 
     // Ensure required environment variables are present
     const requiredEnvVars = ["CLIENT_ID", "APP_API_BASE_URL"]; // Load from a config file for flexibility
+    const sensitiveVars = ["HASH_SECRET_KEY", "CLIENT_SECRET"];
     for (const varName of requiredEnvVars) {
       if (!(varName in envVariables)) {
         handleError(`Required environment variable "${varName}" not found.`);
       }
     }
+    // Validate sensitive vars are not logged
+    sensitiveVars.forEach(varName => {
+      if (varName in envVariables && process.env.NODE_ENV !== 'production') {
+        console.warn(`Sensitive variable ${varName} detected in non-production env`);
+      }
+    });
 
     // Read the command line arguments
     const argv = yargs(process.argv).argv;
@@ -61,14 +68,16 @@ import yargs from "yargs";
       // eslint-disable-next-line no-console
       console.log("Configuration file written in current directory."); // NOSONAR
 
-      // Copy config.json to the public directory
-      try {
-        fs.copyFileSync(currentConfigFilePath, outConfigFilePath);
-        // eslint-disable-next-line no-console
-        console.log("Configuration file copied to public directory."); // NOSONAR
-      } catch (copyError) {
-        handleError(`Error copying config file: ${copyError.message}`);
+      // Ensure output directory exists
+      const outputDir = path.dirname(outConfigFilePath);
+      if (!fs.existsSync(outputDir)) {
+        fs.mkdirSync(outputDir, { recursive: true });
+        console.log(`Created missing directory: ${outputDir}`); // NOSONAR
       }
+
+      // Copy config.json to the output directory
+      fs.copyFileSync(currentConfigFilePath, outConfigFilePath);
+      console.log("Configuration file copied to output directory."); // NOSONAR
     } catch (writeError) {
       handleError(`Error writing config file: ${writeError.message}`);
     }

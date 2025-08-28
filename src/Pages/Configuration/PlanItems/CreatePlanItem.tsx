@@ -47,6 +47,7 @@ const CreatePlanItem = () => {
       helpers.resetForm({ values: initialCreatePlanItemValues });
       enqueueSnackbar("Plan Item Created Successfully", { variant: "success" });
       navigate(RouteConstant.CONFIGURATION_PLAN_ITEMS);
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {}
   };
 

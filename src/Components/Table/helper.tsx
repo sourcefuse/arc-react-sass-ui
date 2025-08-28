@@ -43,7 +43,6 @@ type TableRowProps<T extends AnyObject> = {
 
 export const DefaultColumn = <T extends AnyObject>({
   header,
-  index,
   enableSorting,
   columnCellProps,
 }: ColumnProps<T>) => {
@@ -96,7 +95,6 @@ export const DefaultColumn = <T extends AnyObject>({
 
 export const DefaultRow = <T extends AnyObject>({
   row,
-  index,
   bodyCellProps,
   bodyRowProps,
   onClick,

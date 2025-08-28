@@ -23,7 +23,7 @@ describe("ActionButtonsContainer", () => {
     const screen = renderWithStore(
       <ActionButtonsContainer
         row={mockRow}
-        handleDownlod={mockHandleDownload}
+        handleDownload={mockHandleDownload}
       />
     );
 

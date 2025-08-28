@@ -112,6 +112,7 @@ const FeatureCsvUpload: React.FC = () => {
         variant: "success",
       });
       resetFileInput();
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       enqueueSnackbar("Failed to upload CSV file. Please try again.", {
         variant: "error",

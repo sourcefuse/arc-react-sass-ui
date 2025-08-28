@@ -30,9 +30,6 @@ interface IAppBarProps {
 }
 
 const AppBar = ({
-  open,
-  toggleDrawer,
-  isPermanent,
   userName,
 }: Partial<IAppBarProps> & { userName?: string }) => {
   const { logout, logoutLoading } = useAuth();

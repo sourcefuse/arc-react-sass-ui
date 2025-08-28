@@ -16,7 +16,9 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "baseUrl": "src",
-    "useDefineForClassFields": true
+    "useDefineForClassFields": true,
+    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

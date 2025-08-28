@@ -38,7 +38,7 @@ import { PaymentMethodEnum } from "type";
 import { RouteConstant } from "Constants/routeConstant";
 import { TenantLogsType, TenantStatus } from "redux/app/types";
 import { colors } from "Providers/theme/colors";
-import { groupBy } from "lodash";
+import groupBy from "lodash/groupBy";
 import TenantLogsView from "./TenantLogsView";
 import { Dictionary } from "@reduxjs/toolkit";
 import ProvisioningStatusIcon from "../../Assets/ProvisionStatusIcon";
@@ -91,9 +91,7 @@ export const ActionButtons: React.FC<IActionButtonsProps> = ({
     refreshTenants();
   };
 
-  const handleTenantLogsDialogOpen = (
-    event: React.MouseEvent<HTMLButtonElement>
-  ) => {
+  const handleTenantLogsDialogOpen = () => {
     setIsTenantLogsDialogOpen(true);
   };
 

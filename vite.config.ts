@@ -4,6 +4,7 @@ import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 import svgr from "vite-plugin-svgr";
 import tsconfigPaths from "vite-tsconfig-paths";
+import { visualizer } from "rollup-plugin-visualizer";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -13,6 +14,12 @@ export default defineConfig({
     svgr(),
     legacy({
       targets: [">0.2%", "not dead", "not op_mini all"],
+    }),
+    visualizer({
+      filename: "stats.html", // generates report
+      open: true, // auto-open after build
+      gzipSize: true,
+      brotliSize: true,
     }),
   ],
   test: {

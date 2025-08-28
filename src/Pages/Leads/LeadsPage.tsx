@@ -55,6 +55,7 @@ export const LeadActionButtons: React.FC<IActionButtonsProps> = ({
       setIsConvertDialogOpen(false);
       navigate(`/tenants/create-tenant/${data.leadId}`);
       await updateLeadAsConfirmed({ leadId: data.leadId });
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {}
   };
 
@@ -66,6 +67,7 @@ export const LeadActionButtons: React.FC<IActionButtonsProps> = ({
         variant: "success",
       });
       refreshLeads();
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {}
   };
 

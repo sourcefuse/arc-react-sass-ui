@@ -156,6 +156,7 @@ const PlansPage = () => {
       await updatePlan({ id: plan.id }).unwrap();
       enqueueSnackbar("Plan Suspended Successfully", { variant: "success" });
       getPlans({ filter: { where: { and: filters } }, limit, offset });
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {}
   };
   const managePlanTableColumns = getManagePlanTableColumns(handleSuspension);

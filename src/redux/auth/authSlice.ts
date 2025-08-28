@@ -1,4 +1,4 @@
-/* eslint-disable camelcase */
+ 
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { PermissionsEnum } from "Constants/enums/permissions";
 import { RootState } from "redux/store";

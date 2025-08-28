@@ -19,7 +19,6 @@ export interface SliderProps extends Omit<MuiSliderProps, "onChange"> {
 const Slider: React.FC<SliderProps> = ({
   id,
   label,
-  disabled,
   onChange,
   minDistance,
   errorMessage,

@@ -90,6 +90,7 @@ const EditPlanItem = () => {
           ),
         2000
       );
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {}
   };
 

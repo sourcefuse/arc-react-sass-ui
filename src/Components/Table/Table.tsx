@@ -350,7 +350,6 @@ const ARCTable = <T extends AnyObject>({
   tablePropsObject,
   headerBtnName,
   headerBtnEndIcon,
-  headerBtnStartIcon,
   headerBtnPermissions,
   handleHeaderBtnClick,
   setFinalFilter,

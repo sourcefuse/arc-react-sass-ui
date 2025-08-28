@@ -42,7 +42,7 @@ const ClustersPage = () => {
         await updateCluster(values).unwrap();
         enqueueSnackbar("Cluster Updated Successfully", { variant: "success" });
       } else {
-        const { id, clusterTypeId, ...createPayload } = values;
+        const { ...createPayload } = values;
         await createCluster(createPayload).unwrap();
         enqueueSnackbar("Cluster Created Successfully", { variant: "success" });
       }

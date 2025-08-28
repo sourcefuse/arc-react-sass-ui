@@ -60,6 +60,7 @@ const SettingsPage = () => {
       await refetch();
       actions.resetForm({ values: adminSettings });
       enqueueSnackbar("Settings updated Successfully", { variant: "success" });
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       enqueueSnackbar("Failed to update settings", { variant: "error" });
     }

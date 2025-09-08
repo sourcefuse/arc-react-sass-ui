@@ -1,0 +1,17 @@
+{
+  "clientId": "$CLIENT_ID",
+  "appApiBaseUrl": "$APP_API_BASE_URL",
+  "authApiBaseUrl": "$AUTH_API_BASE_URL",
+  "enableSessionTimeout": "$ENABLE_SESSION_TIMEOUT",
+  "expiryTimeInMinute": "$EXPIRY_TIME_IN_MINUTE",
+  "promptTimeBeforeIdleInMinute": "$PROMPT_TIME_BEFORE_IDLE_IN_MINUTE",
+  "tenantApiBaseUrl": "$TENANT_API_BASE_URL",
+  "auditApiBaseUrl": "$AUDIT_API_BASE_URL",
+  "grafanaUrl": "$GRAFANA_URL",
+  "defaultTierId": "$DEFAULT_TIER_ID",
+  "enableHashSecret": "$ENABLE_HASH_SECRET",
+  "appName": "$APP_NAME",
+  "appLogo": "$APP_LOGO",
+  "observabilityDomain": "$OBSERVABILITY_DOMAIN",
+  "appDescription": "$APP_DESCRIPTION"
+}

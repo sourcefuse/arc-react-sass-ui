@@ -17,6 +17,7 @@ export const getLeadStatusColor = (status: UiLeadStatus): string => {
     [UiLeadStatus.INVALID]: `${colors.provisioningFailed}`,
     [UiLeadStatus.CLOSED]: `${colors.active}`,
     [UiLeadStatus.CONFIRMED]: `${colors.deProvisioning}`,
+    [UiLeadStatus.UNKNOWN]: `${colors.black}`,
   };
   return statusColorMap[status] || "black";
 };
@@ -27,6 +28,7 @@ export const getLeadStatusDisplayName = (status: UiLeadStatus): string => {
     [UiLeadStatus.INVALID]: "Invalid",
     [UiLeadStatus.CLOSED]: "Closed",
     [UiLeadStatus.CONFIRMED]: "Confirmed",
+    [UiLeadStatus.UNKNOWN]: "Unknown",
   };
   return displayNameMap[status] || status;
 };

@@ -25,7 +25,7 @@ export const getLogStatusColor = (status?: string): string => {
     aborted: `${colors.provisioningFailed}`,
     default: `${colors.inactiveGray}`,
   };
-  return statusColorMap[status ?? "Default"] || colors.inactiveGray;
+  return statusColorMap[status ?? "Default"] ?? colors.inactiveGray;
 };
 const TenantLogsView: React.FC<ITenantLogsViewProps> = ({
   tenantId,
@@ -114,7 +114,7 @@ const TenantLogsView: React.FC<ITenantLogsViewProps> = ({
                 style={{ fontSize: "0.875rem" }}
               >
                 <td style={{ textAlign: "left" }}>
-                  [{convertToDate(log.createdOn, "yyyy-MM-dd HH:mm")}]
+                  [{String(convertToDate(log.createdOn, "yyyy-MM-dd HH:mm"))}]
                 </td>
                 <td style={{ textAlign: "left" }}>{log.message.stageName}</td>
                 <td style={{ textAlign: "left" }}>

@@ -17,9 +17,9 @@ const featureErrMsg = "Feature is required";
 export const createPlanItemValidationSchema = yup.object({
   planName: yup
     .string()
-    .required("Plane name is required")
-    .min(3, "Plane name should have at least 3 characters")
-    .max(50, "Plane name should have at most 50 characters"),
+    .required("Plan name is required")
+    .min(3, "Plan name should have at least 3 characters")
+    .max(50, "Plan name should have at most 50 characters"),
   description: yup
     .string()
     .nullable()

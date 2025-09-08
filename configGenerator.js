@@ -24,9 +24,11 @@ import yargs from "yargs";
       }
     }
     // Validate sensitive vars are not logged
-    sensitiveVars.forEach(varName => {
-      if (varName in envVariables && process.env.NODE_ENV !== 'production') {
-        console.warn(`Sensitive variable ${varName} detected in non-production env`);
+    sensitiveVars.forEach((varName) => {
+      if (varName in envVariables && process.env.NODE_ENV !== "production") {
+        console.warn(
+          `Sensitive variable ${varName} detected in non-production env`
+        );
       }
     });
 

@@ -48,7 +48,6 @@ export default defineConfig([
       "@typescript-eslint/no-explicit-any": "warn",
       "@typescript-eslint/no-unused-vars": "warn",
 
-
       // General rules
       "no-console": ["warn", { allow: ["warn", "error"] }],
       "no-empty": "off",

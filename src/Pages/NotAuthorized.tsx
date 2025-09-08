@@ -12,7 +12,7 @@ const NotAuthorized = () => (
     <Grid item>
       <Typography variant="h3">403 Access Denied</Typography>
       <Typography>
-        We are sorry but the you are not authorized to view this page.
+        We are sorry but you are not authorized to view this page.
       </Typography>
     </Grid>
   </Grid>

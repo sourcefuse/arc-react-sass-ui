@@ -118,6 +118,7 @@ const getEndAdornment = ({
         </IconButton>
       </Tooltip>
     );
+  return null;
 };
 
 const SelectComponent: React.FC<SelectComponentProps> = ({
@@ -153,6 +154,7 @@ const SelectComponent: React.FC<SelectComponentProps> = ({
     onBlur={onBlur}
     input={<OutlinedInput label={label} />}
     renderValue={renderLabels}
+    variant="outlined"
     {...rest}
   >
     {isLoading ? (

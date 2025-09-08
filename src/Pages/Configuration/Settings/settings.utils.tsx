@@ -6,7 +6,6 @@ import { AdminSettings } from "redux/app/types/adminSettings.type";
 import * as yup from "yup";
 import { selectConfigData } from "redux/config/configSlice";
 import { useSelector } from "react-redux";
-// 8400
 interface IFormControlConfig {
   id: string;
   label: string;

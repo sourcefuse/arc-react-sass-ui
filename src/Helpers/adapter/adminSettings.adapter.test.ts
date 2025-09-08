@@ -105,6 +105,7 @@ describe("adaptToAdminSettings", () => {
 
     const result = adaptToAdminSettings(combined);
     expect(result).toEqual({
+      id: "",
       tags: [],
       tiers: [],
     });

@@ -14,14 +14,14 @@ export function adaptToLead(leads: LeadType[]): LeadDataType[] {
       return {
         leadId: lead.id,
         leadName: `${lead.firstName} ${lead.lastName}`,
-        status: leadStatusMap[lead.status] || "Unknown",
+        status: leadStatusMap[lead.status] ?? LeadStatus.UNKNOWN,
         createdAt: lead.createdOn,
         email: lead.email,
         phone: lead.countryCode + " " + lead.phoneNumber,
         employer: lead.companyName,
         numberOfEmployee: lead.employeeCount.toString(),
       };
-    }) || []
+    }) ?? []
   );
 }
 

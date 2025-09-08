@@ -35,7 +35,7 @@ export const LeadView: FC<Props> = ({ handleCloseModal, lead }) => {
           color: getLeadStatusColor(lead.status),
           highlight: true,
         },
-        { label: "Created Date", value: convertToDate(lead.createdAt) },
+        { label: "Created Date", value: String(convertToDate(lead.createdAt)) },
         { label: "Email Address", value: lead.email },
         { label: "Phone Number", value: lead.phone },
         { label: "Employer", value: lead.employer },

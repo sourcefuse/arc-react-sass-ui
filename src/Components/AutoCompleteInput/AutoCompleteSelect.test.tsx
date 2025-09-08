@@ -67,7 +67,7 @@ describe("AutoCompleteSelect Component", () => {
     render(
       <AutoCompleteSelect
         data={mockData}
-        value={mockData[0].value}
+        value={mockData[0]?.value ?? null}
         onChange={mockOnChange}
         label={testId}
       />

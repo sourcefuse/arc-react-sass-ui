@@ -213,7 +213,9 @@ describe("Table Component Tests", () => {
       </BrowserRouter>
     );
 
-    const sortableColumnHeader = screen.getByText(mockColumns[0].header);
+    const sortableColumnHeader = screen.getByText(
+      mockColumns?.[0]?.header ?? "Default"
+    );
     fireEvent.click(sortableColumnHeader);
     const sortedRowCell = within(screen.getAllByRole("row")[1]).getByText(
       mockData[0].tenantID

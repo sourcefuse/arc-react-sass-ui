@@ -46,8 +46,14 @@ export const TenantView: FC<Props> = ({ handleCloseModal, tenant }) => {
           color: getStatusColor(tenant.status),
           highlight: true,
         },
-        { label: "Created Date", value: convertToDate(tenant.createdDate) },
-        { label: "Billing Date", value: convertToDate(tenant.billingDate) },
+        {
+          label: "Created Date",
+          value: String(convertToDate(tenant.createdDate)),
+        },
+        {
+          label: "Billing Date",
+          value: String(convertToDate(tenant.billingDate)),
+        },
         { label: "Tier", value: tenant.tier ?? "" },
         { label: "Subdomain", value: tenant.key ?? "" },
       ],

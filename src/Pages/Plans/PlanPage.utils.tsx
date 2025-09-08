@@ -115,7 +115,7 @@ export const getManagePlanTableColumns = (
       accessorKey: "createdDate",
       id: "createdDate",
       cell: ({ row: { original } }) => (
-        <Box>{convertToDate(original.createdDate)}</Box>
+        <Box>{String(convertToDate(original.createdDate))}</Box>
       ),
     },
     {

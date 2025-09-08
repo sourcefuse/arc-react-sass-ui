@@ -4,7 +4,7 @@ import React from "react";
 
 interface IStatusChipProps {
   label: string;
-  color: string;
+  color?: string;
   minWidth?: string;
   value?: string;
   handleClick?: (item: SelectNode) => void;

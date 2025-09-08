@@ -12,8 +12,18 @@ import { adaptToTagSelect } from "./tags.adapter";
 export function adaptToAdminSettings(
   combinedAdminSettings: CombinedAdminSettings
 ): IFormAdminSettings {
+  const adminSetting = combinedAdminSettings.adminSettings[0];
+  if (!adminSetting) {
+    return {
+      id: "",
+      tags: adaptToTagSelect(combinedAdminSettings.tags),
+      tiers: adaptToTierSelect(combinedAdminSettings.tiers),
+      // Add other default properties as required by IFormAdminSettings
+    } as IFormAdminSettings;
+  }
   return {
-    ...combinedAdminSettings.adminSettings[0],
+    ...adminSetting,
+    id: adminSetting.id ?? "",
     tags: adaptToTagSelect(combinedAdminSettings.tags),
     tiers: adaptToTierSelect(combinedAdminSettings.tiers),
   };

@@ -90,7 +90,7 @@ describe("Create Plan Item", () => {
     renderCreatePlanItem();
 
     const requiredFields = [
-      { label: /Plan Item name/i, errorMessage: "Plane name is required" },
+      { label: /Plan Item name/i, errorMessage: "Plan name is required" },
       { label: /Description/i, errorMessage: "Description is required" },
       { label: /Feature/i, errorMessage: "Feature is required" },
     ];

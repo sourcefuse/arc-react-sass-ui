@@ -91,10 +91,10 @@ const Dashboard = () => {
                 dataLabel="Tenants"
                 icon={
                   <PeopleAltOutlinedIcon
-                    sx={dashboardStyles.statsIcon(colors.yellow)}
+                    sx={dashboardStyles.statsIcon(colors.yellow ?? "#FFD700")}
                   />
                 }
-                iconBgColor={colors.yellow40}
+                iconBgColor={colors.yellow40 ?? "#FFD700"}
                 isLoading={isLoadingTenantsCount}
                 handleClick={handleNavigateToTenantListing}
               />
@@ -104,7 +104,7 @@ const Dashboard = () => {
                 dataValue={`${plansCount?.count ?? "NA"}`}
                 dataLabel="Active Plans"
                 icon={<img src={ActivePlansIcon} alt="active-plans" />}
-                iconBgColor={colors.teal40}
+                iconBgColor={colors.teal40 ?? "#008080"}
                 isLoading={isLoadingPlansCount}
                 handleClick={handleNavigateToPlansListing}
               />

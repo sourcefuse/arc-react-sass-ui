@@ -22,7 +22,7 @@ export const ProtectedRouteWrapper = ({
   const location = useLocation();
   return (
     <>
-      {isAuthorized() ? (
+      {isAuthorized!() ? (
         children
       ) : (
         <Navigate to={"/login"} state={{ from: location }} replace />

@@ -110,6 +110,7 @@ export const DefaultRow = <T extends AnyObject>({
       {...bodyRowProps}
       onClick={(e) => {
         e.stopPropagation();
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         onClick && onClick();
       }}
     >
@@ -258,9 +259,9 @@ export const useHandleLocalStorage = (handleSortColumnChange: any) => {
     return null;
   }, []);
   const getSortingOrder = (sortingState: SortingState): string | null => {
-    if (sortingState.length === 0) return null;
+    if (sortingState.length === 0 || !sortingState[0]) return null;
 
-    const { id, desc } = sortingState[0];
+    const { id, desc } = sortingState[0]!;
     const direction = desc ? "desc" : "asc";
     return `${getBackendColumnName(id)} ${direction}`;
   };

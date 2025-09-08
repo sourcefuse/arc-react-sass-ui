@@ -210,13 +210,28 @@ const Dropdown: React.FC<Props> = ({
         loading={isLoading}
         freeSolo={enableAutoComplete}
         disableClearable={!enableAutoComplete}
-        isOptionEqualToValue={(option, val) => option?.value === val?.value}
+        isOptionEqualToValue={(option, val) => {
+          if (typeof option === "string" && typeof val === "string") {
+            return option === val;
+          }
+          if (
+            typeof option === "object" &&
+            typeof val === "object" &&
+            option !== null &&
+            val !== null &&
+            "value" in option &&
+            "value" in val
+          ) {
+            return option.value === val.value;
+          }
+          return false;
+        }}
         getOptionLabel={getOptionLabel}
         disableCloseOnSelect={multiple}
         renderOption={renderOption}
         sx={autoCompleteTheme}
         disabled={disabled}
-        onChange={(_, val) => val && onChange?.(val)}
+        onChange={(_, val) => val && onChange?.(val as string | IOptionNode)}
         renderInput={renderInput}
         value={value}
         multiple={multiple}

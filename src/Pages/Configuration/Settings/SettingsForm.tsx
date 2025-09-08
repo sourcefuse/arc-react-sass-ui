@@ -34,7 +34,7 @@ const SettingsForm: React.FC<ISettingsForm> = ({ isSubmitting }) => {
       tiers: apiData?.tiers ?? [],
       tags: apiData?.tags ?? [],
     };
-    return multiSelectMap[id] ?? {};
+    return multiSelectMap[id] ?? [];
   };
 
   const renderInput = (

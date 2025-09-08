@@ -18,22 +18,26 @@ type Props = {
 
 const useInvoiceInformation = (invoice: IBillingInvoice) => {
   const baseInvoiceData = [
-    { label: "Invoice No.", value: invoice.invoiceNo },
+    { label: "Invoice No.", value: String(invoice.invoiceNo) },
     {
       label: "Invoice Date",
-      value: invoice.createdOn ? convertToDate(invoice.createdOn) : "NA",
+      value: invoice.createdOn
+        ? String(convertToDate(invoice.createdOn))
+        : "NA",
     },
     {
       label: "Due Date",
-      value: invoice.dueDate ? convertToDate(invoice.dueDate) : "NA",
+      value: invoice.dueDate ? String(convertToDate(invoice.dueDate)) : "NA",
     },
     {
       label: "From",
-      value: invoice.startDate ? convertToDate(invoice.startDate) : "NA",
+      value: invoice.startDate
+        ? String(convertToDate(invoice.startDate))
+        : "NA",
     },
     {
       label: "To",
-      value: invoice.endDate ? convertToDate(invoice.endDate) : "NA",
+      value: invoice.endDate ? String(convertToDate(invoice.endDate)) : "NA",
     },
     {
       label: "Status",

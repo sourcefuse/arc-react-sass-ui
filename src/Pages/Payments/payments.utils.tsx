@@ -72,7 +72,7 @@ export const getInvoiceTableColumns = (
       header: "Invoice Date",
       accessorKey: "createdOn",
       cell: ({ row: { original } }) => (
-        <Box>{convertToDate(original.createdOn)}</Box>
+        <Box>{String(convertToDate(original.createdOn))}</Box>
       ),
     },
     {
@@ -86,7 +86,7 @@ export const getInvoiceTableColumns = (
       header: "Due Date",
       accessorKey: "dueDate",
       cell: ({ row: { original } }) => (
-        <Box>{convertToDate(original.dueDate)}</Box>
+        <Box>{String(convertToDate(original.dueDate))}</Box>
       ),
     },
     {

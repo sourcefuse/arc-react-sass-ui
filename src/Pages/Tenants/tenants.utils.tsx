@@ -21,7 +21,7 @@ export const getStatusColor = (status: TenantStatus): string => {
     [TenantStatus.PROVISIONFAILED]: `${colors.provisioningFailed}`,
     [TenantStatus.PROVISIONING]: `${colors.provisioning}`,
   };
-  return statusColorMap[status] || colors.defaultPayments;
+  return statusColorMap[status] ?? colors.defaultPayments;
 };
 export const getLogStatusColor = (status?: string): string => {
   const statusColorMap: Record<string, string> = {
@@ -30,7 +30,7 @@ export const getLogStatusColor = (status?: string): string => {
     Failed: `${colors.destructive}`,
     None: `${colors.inactiveGray}`,
   };
-  return statusColorMap[status ?? "None"] || colors.secondary;
+  return statusColorMap[status ?? "None"] ?? colors.secondary;
 };
 export const tenantStatusesAllowedForDirectProvisioning: TenantStatus[] = [
   TenantStatus.PENDINGPROVISION,
@@ -59,7 +59,7 @@ export const getSubscriptionStatusColor = (
     [SubscriptionStatus.PENDING_CANCELLATION]: `${colors.provisioningFailed}`,
     [SubscriptionStatus.EXPIRED]: `${colors.deProvisioning}`,
   };
-  return statusColorMap[status] || colors.defaultPayments;
+  return statusColorMap[status] ?? colors.defaultPayments;
 };
 
 export const getSUbscriptionStatusLabel = (

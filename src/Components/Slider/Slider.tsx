@@ -32,7 +32,13 @@ const Slider: React.FC<SliderProps> = ({
       if (!onChange) return;
       if (!Array.isArray(newValue)) {
         onChange(newValue);
-      } else if (minDistance && newValue[1] - newValue[0] < minDistance) {
+      } else if (
+        minDistance &&
+        Array.isArray(newValue) &&
+        newValue[0] !== undefined &&
+        newValue[1] !== undefined &&
+        newValue[1] - newValue[0] < minDistance
+      ) {
         if (activeThumb === 0) {
           const clamped = Math.min(newValue[0], MAX_VALUE - minDistance);
           onChange([clamped, clamped + minDistance]);

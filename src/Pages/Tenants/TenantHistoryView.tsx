@@ -66,7 +66,9 @@ const TenantHistoryView: React.FC<Props> = ({
             >
               Tenant provisioning started at{" "}
               <strong>
-                {convertToDate(log.provisionStartOn, "yyyy-MM-dd HH:mm")}
+                {String(
+                  convertToDate(log.provisionStartOn, "yyyy-MM-dd HH:mm")
+                )}
               </strong>
               {log.status && (
                 <>
@@ -89,7 +91,9 @@ const TenantHistoryView: React.FC<Props> = ({
                 <span style={{ marginLeft: "0.2rem" }}>
                   at{" "}
                   <strong>
-                    {convertToDate(log.provisionEndOn, "yyyy-MM-dd HH:mm")}
+                    {String(
+                      convertToDate(log.provisionEndOn, "yyyy-MM-dd HH:mm")
+                    )}
                   </strong>
                 </span>
               )}

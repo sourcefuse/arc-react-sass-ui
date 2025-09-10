@@ -1,193 +1,623 @@
-# React SaaS Boilerplate
+# ARC React SaaS UI
 
-A **generalized, customizable SaaS frontend** built with React, designed to handle multi-tenant subscription management, authentication (via Keycloak), and full white-label capabilities. This boilerplate is made to serve as a **reusable foundation** for future SaaS projects—just plug in the backend and update environment/config values, branding assets, and colors.
-
----
-
-## Key Features
-
-- **Generalized Frontend Architecture** — Easily reuse for multiple client SaaS apps.
-- **Keycloak Integration** — Secure authentication via OAuth2/OpenID Connect.
-- **Multi-Tenant Support** — Built-in tenant management and plan subscription flows.
-- **Dynamic Theming** — Modify one file to update the entire UI color scheme.
-- **Custom Branding** — Update headers, descriptions, logos, and name via env/assets.
-- **Session Timeout Management** — Configurable session expiry and idle prompts.
-- **API Driven** — Connects to backend services using environment-based API endpoints.
-- **Observability & Audit** — Integrated endpoints for logging, audit, and Grafana.
+<div align="center">
+  <img src="src/Assets/logo-header.png" alt="ARC React SaaS UI" width="200" />
+  
+  **A comprehensive, production-ready React component library for building scalable SaaS applications**
+  
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  [![React](https://img.shields.io/badge/React-18.2.0-blue.svg)](https://reactjs.org/)
+  [![TypeScript](https://img.shields.io/badge/TypeScript-4.9.3-blue.svg)](https://www.typescriptlang.org/)
+  [![Material-UI](https://img.shields.io/badge/Material--UI-5.10.15-blue.svg)](https://mui.com/)
+  [![Vite](https://img.shields.io/badge/Vite-4.1.5-646CFF.svg)](https://vitejs.dev/)
+</div>
 
 ---
 
-## Environment Variables
+## 🚀 Quick Start
 
-Create a `.env` file in the root of your project and define the following variables:
+```bash
+# Clone the repository
+git clone https://github.com/sourcefuse/arc-react-sass-ui.git
+
+# Navigate to the project directory
+cd arc-react-sass-ui
+
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp .env.example .env
+
+# Start the development server
+npm start
+```
+
+Visit `http://localhost:3000` to see the application in action.
+
+---
+
+## 📋 Table of Contents
+
+- [Features](#-features)
+- [Architecture](#-architecture)
+- [Installation](#-installation)
+- [Configuration](#-configuration)
+- [Usage](#-usage)
+- [Components](#-components)
+- [Theming](#-theming)
+- [Authentication](#-authentication)
+- [API Integration](#-api-integration)
+- [Testing](#-testing)
+- [Deployment](#-deployment)
+- [Contributing](#-contributing)
+- [License](#-license)
+
+---
+
+## ✨ Features
+
+### 🏗️ **Enterprise-Ready Architecture**
+- **Modular Component Library** — 50+ reusable, customizable React components
+- **TypeScript First** — Full type safety and excellent developer experience
+- **Modern Build System** — Vite-powered for lightning-fast development and builds
+- **Production Optimized** — Tree-shaking, code splitting, and performance optimizations
+
+### 🔐 **Authentication & Security**
+- **Keycloak Integration** — OAuth2/OpenID Connect authentication
+- **Session Management** — Configurable session timeout and idle detection
+- **Permission-Based Access** — Role-based component and route protection
+- **Secure Token Handling** — Automatic token refresh and validation
+
+### 🏢 **Multi-Tenant SaaS Features**
+- **Tenant Management** — Complete tenant lifecycle management
+- **Subscription Plans** — Flexible plan configuration and billing cycles
+- **Feature Toggles** — Dynamic feature enablement per tenant
+- **Billing & Invoicing** — Integrated payment and invoice management
+
+### 🎨 **Customization & Theming**
+- **Dynamic Theming** — Single-file color configuration for complete rebranding
+- **White-Label Ready** — Easy logo, branding, and styling customization
+- **Responsive Design** — Mobile-first approach with Material-UI components
+- **Dark/Light Mode** — Built-in theme switching capabilities
+
+### 📊 **Business Intelligence**
+- **Dashboard Analytics** — Real-time metrics and KPI visualization
+- **Data Tables** — Advanced filtering, sorting, and pagination
+- **Charts & Graphs** — Interactive data visualization with Recharts
+- **Audit Logging** — Comprehensive activity tracking and observability
+
+### 🛠️ **Developer Experience**
+- **Hot Reload** — Instant development feedback with Vite
+- **Comprehensive Testing** — Vitest, Testing Library, and Cypress integration
+- **Code Quality** — ESLint, Prettier, and Husky pre-commit hooks
+- **Documentation** — Extensive component documentation and examples
+
+---
+
+## 🏛️ Directory Structure
+
+```
+src/
+├── Components/           # Reusable UI components
+│   ├── AppBar/          # Application header
+│   ├── Button/          # Button variants
+│   ├── Table/           # Data tables with advanced features
+│   ├── Forms/           # Form components and validation
+│   ├── SideNav/         # Navigation components
+│   └── ...              # 40+ more components
+├── Pages/               # Application pages
+│   ├── Dashboard/       # Analytics dashboard
+│   ├── Tenants/         # Tenant management
+│   ├── Configuration/   # System configuration
+│   └── ...              # Feature-specific pages
+├── Providers/           # React context providers
+│   ├── theme/           # Theme configuration
+│   └── ...              # Global state providers
+├── Hooks/               # Custom React hooks
+├── redux/               # State management
+├── Constants/           # Application constants
+└── Helpers/             # Utility functions
+```
+
+---
+
+## 🛠️ Installation
+
+### Prerequisites
+
+- **Node.js** 16.0 or higher
+- **npm** 8.0 or higher
+- **Keycloak** instance (for authentication)
+
+### Environment Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/sourcefuse/arc-react-sass-ui.git
+   cd arc-react-sass-ui
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Configure environment variables:**
+   ```bash
+   cp .env.example .env
+   ```
+
+4. **Start the development server:**
+   ```bash
+   npm start
+   ```
+
+---
+
+## ⚙️ Configuration
+
+### Environment Variables
+
+Create a `.env` file in the root directory with the following variables:
 
 ```env
 # Core Configuration
-CLIENT_ID=
-APP_API_BASE_URL=
-AUTH_API_BASE_URL=
-TENANT_API_BASE_URL=
-AUDIT_API_BASE_URL=
+CLIENT_ID=your-keycloak-client-id
+APP_API_BASE_URL=https://api.yourdomain.com
+AUTH_API_BASE_URL=https://auth.yourdomain.com
+TENANT_API_BASE_URL=https://tenant-api.yourdomain.com
+AUDIT_API_BASE_URL=https://audit-api.yourdomain.com
 
 # Session Management
-ENABLE_SESSION_TIMEOUT=
-STORAGE_SESSION_TIME_KEY=
-EXPIRY_TIME_IN_MINUTE=
-PROMPT_TIME_BEFORE_IDLE_IN_MINUTE=
-
-# Observability
-GRAFANA_URL=
-OBSERVABILITY_DOMAIN=
-
-# Default Values
-DEFAULT_TIER_ID=
-HASH_SECRET_KEY=
-ENABLE_HASH_SECRET=
-
-# UI & Branding
-APP_NAME=           # Application name shown in the header
-APP_DESCRIPTION=    # Application description shown in the header
-```
-
----
-
-## Inputs
-
-These environment variables control the behavior, configuration, and branding of the SaaS UI. Define them in a `.env` file or Docker environment.
-
-| Name                                | Description                                                                | Type      | Default | Required |
-| ----------------------------------- | -------------------------------------------------------------------------- | --------- | ------- | :------: |
-| `CLIENT_ID`                         | Unique public identifier for the application used by Keycloak.             | `string`  |         |   yes    |
-| `AUTH_API_BASE_URL`                 | Base URL of the Keycloak authentication service.                           | `string`  |         |   yes    |
-| `APP_API_BASE_URL`                  | Base URL of the main backend API.                                          | `string`  |         |    no    |
-| `TENANT_API_BASE_URL`               | Base URL for tenant-related services.                                      | `string`  |         |    no    |
-| `AUDIT_API_BASE_URL`                | Base URL for audit logging APIs.                                           | `string`  |         |    no    |
-| `ENABLE_SESSION_TIMEOUT`            | Enables/disables idle session timeout behavior.                            | `boolean` | `false` |    no    |
-| `EXPIRY_TIME_IN_MINUTE`             | Duration (in minutes) after which the session expires.                     | `number`  | `15`    |    no    |
-| `PROMPT_TIME_BEFORE_IDLE_IN_MINUTE` | Minutes before session expiry to show the idle timeout prompt.             | `number`  | `1`     |    no    |
-| `STORAGE_SESSION_TIME_KEY`          | Key name used for storing session expiry timestamp in storage.             | `string`  |         |    no    |
-| `GRAFANA_URL`                       | Grafana instance URL for observability dashboards.                         | `string`  |         |    no    |
-| `OBSERVABILITY_DOMAIN`              | Domain or tag used for identifying logs/metrics in observability systems.  | `string`  |         |    no    |
-| `DEFAULT_TIER_ID`                   | Default tier ID to fall back to in subscription flows.                     | `string`  |         |    no    |
-| `HASH_SECRET_KEY`                   | Secret key used for internal hashing (e.g., identifiers or config values). | `string`  |         |    no    |
-| `ENABLE_HASH_SECRET`                | Enable or disable use of secret-based hashing.                             | `boolean` | `false` |    no    |
-| `APP_NAME`                          | Application name to be shown in the header and browser title.              | `string`  |         |   yes    |
-| `APP_DESCRIPTION`                   | Application description to be shown in the UI header.                      | `string`  |         |   yes    |
-
-> All of these values can be injected at runtime via `.env` files or Docker environment configuration.
-
-> _You can dynamically switch behavior and branding by simply modifying these values._
-
----
-
-## Theme Customization
-
-All UI theming is handled in a single config file: [`colors.ts`](./src/Providers/theme/colors.ts)
-
-Update primary/secondary colors, background, surfaces, borders, and even component states (like success, warning, error). This allows for **full rebranding** without touching component code.
-
-```ts
-export const colors = {
-  primary: "#ff0000",
-  secondary: "#5c0000",
-  backgroundLight: "#fcfafaff",
-  success: "#00C851",
-  destructive: "#ED4337",
-  // ...many more customizable color keys
-};
-```
-
-Want to create a new theme? Just change the values here.
-
----
-
-## Branding Customization
-
-Update the following for client-specific branding:
-
-- **App Name / Description**: via `.env`
-- **Logo**: replace assets in `/src/assets/`
-- **Color Theme**: edit `colors.ts`
-
-> Everything else stays the same — perfect for rapid prototyping and scaling!
-
----
-
-## Authentication
-
-It uses **Keycloak** as the authentication provider, implementing secure OAuth2/OpenID Connect flows.
-
-To enable authentication, the **host must configure the Keycloak authentication API URL** and related environment variables.
-
-#### Required Environment Variables
-
-```env
-AUTH_API_BASE_URL=      # URL to your Keycloak authentication server
-CLIENT_ID=              # The client ID configured in Keycloak for this app
-```
-
-#### How It Works
-
-- When a user accesses the app, they are redirected to Keycloak for login.
-- Upon successful authentication, Keycloak issues tokens (access, refresh, ID).
-- These tokens are stored securely on the client side and used for API authorization.
-- Token refresh and session timeout behaviors are managed based on the following env variables:
-
-```env
 ENABLE_SESSION_TIMEOUT=true
 EXPIRY_TIME_IN_MINUTE=30
 PROMPT_TIME_BEFORE_IDLE_IN_MINUTE=5
 STORAGE_SESSION_TIME_KEY=sessionExpiry
+
+# Observability
+GRAFANA_URL=https://grafana.yourdomain.com
+OBSERVABILITY_DOMAIN=your-app-domain
+
+# UI & Branding
+APP_NAME=Your SaaS Application
+APP_DESCRIPTION=Your application description
+
+# Optional Configuration
+DEFAULT_TIER_ID=default-tier
+HASH_SECRET_KEY=your-secret-key
+ENABLE_HASH_SECRET=true
 ```
 
-> **Note**: The frontend only handles token management and user session behavior. You must ensure that your backend APIs validate these tokens accordingly.
+### Configuration Reference
+
+| Variable | Description | Type | Required | Default |
+|----------|-------------|------|----------|---------|
+| `CLIENT_ID` | Keycloak client identifier | `string` | ✅ | - |
+| `AUTH_API_BASE_URL` | Keycloak authentication server URL | `string` | ✅ | - |
+| `APP_API_BASE_URL` | Main backend API URL | `string` | ❌ | - |
+| `TENANT_API_BASE_URL` | Tenant management API URL | `string` | ❌ | - |
+| `AUDIT_API_BASE_URL` | Audit logging API URL | `string` | ❌ | - |
+| `ENABLE_SESSION_TIMEOUT` | Enable session timeout management | `boolean` | ❌ | `false` |
+| `EXPIRY_TIME_IN_MINUTE` | Session expiry time in minutes | `number` | ❌ | `15` |
+| `PROMPT_TIME_BEFORE_IDLE_IN_MINUTE` | Idle warning time in minutes | `number` | ❌ | `1` |
+| `APP_NAME` | Application name for branding | `string` | ✅ | - |
+| `APP_DESCRIPTION` | Application description | `string` | ✅ | - |
 
 ---
 
-### Backend Requirements
+## 🎯 Usage
 
-- Ensure that your Keycloak instance is publicly accessible from the frontend.
-- The `CLIENT_ID` must match the client app configured in Keycloak.
-- CORS and redirect URIs should be properly set in Keycloak for local and production environments.
-- Your backend services must protect routes using Keycloak-provided tokens and validate them server-side.
+### Basic Application Setup
+
+```tsx
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { ThemeProvider } from '@mui/material/styles';
+import App from './App';
+import { store } from './redux/store';
+import { theme } from './Providers/theme';
+
+function AppWrapper() {
+  return (
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ThemeProvider>
+    </Provider>
+  );
+}
+
+export default AppWrapper;
+```
+
+### Using Components
+
+```tsx
+import { Button, Table, PageHeader } from 'Components';
+import { PermissionsEnum } from 'Constants/enums';
+import { PermissionWrapper } from 'Components/PermissionWrapper';
+
+function MyPage() {
+  return (
+    <>
+      <PageHeader pageName="My Page" />
+      <PermissionWrapper requiredPermissions={[PermissionsEnum.ViewTenant]}>
+        <Button variant="contained" color="primary">
+          Add Tenant
+        </Button>
+      </PermissionWrapper>
+      <Table
+        columns={columns}
+        data={data}
+        enableFiltering
+        enableSorting
+        enablePagination
+      />
+    </>
+  );
+}
+```
 
 ---
 
-## Development Setup
+## 🧩 Components
+
+### Core Components
+
+| Component | Description | Features |
+|-----------|-------------|----------|
+| **AppBar** | Application header with navigation | User menu, notifications, theme toggle |
+| **SideNav** | Sidebar navigation | Permission-based visibility, nested menus |
+| **Table** | Advanced data table | Filtering, sorting, pagination, row selection |
+| **Button** | Button variants | Multiple styles, loading states, icons |
+| **Forms** | Form components | Validation, error handling, field types |
+| **Modal** | Modal dialogs | Customizable, accessible, responsive |
+
+### Data Visualization
+
+| Component | Description | Use Case |
+|-----------|-------------|----------|
+| **CustomPieChart** | Interactive pie charts | Dashboard metrics, status distribution |
+| **StatsCard** | Metric display cards | KPI visualization, quick stats |
+| **StatusChip** | Status indicators | Tenant status, plan status, payment status |
+
+### Form Components
+
+| Component | Description | Features |
+|-----------|-------------|----------|
+| **Input** | Text input fields | Validation, error states, helper text |
+| **DatePicker** | Date selection | Range selection, validation, formatting |
+| **AutoComplete** | Autocomplete inputs | Search, multi-select, async loading |
+| **FileUpload** | File upload component | Drag & drop, validation, progress |
+
+### Layout Components
+
+| Component | Description | Features |
+|-----------|-------------|----------|
+| **PageHeader** | Page title and actions | Breadcrumbs, action buttons, search |
+| **PagePaper** | Content container | Consistent spacing, elevation |
+| **DetailCard** | Information display | Structured data presentation |
+
+---
+
+## 🎨 Theming
+
+### Color Configuration
+
+All theming is centralized in `src/Providers/theme/colors.ts`:
+
+```typescript
+export const colors = {
+  // Primary brand colors
+  primary: "#ff0000",
+  primary200: "#f15e5eff",
+  primary100: "#f9b9b9ff",
+  primary50: "#fce2e2ff",
+  
+  // Secondary colors
+  secondary: "#5c0000",
+  
+  // Status colors
+  success: "#00C851",
+  warning: "#FAC353",
+  destructive: "#ED4337",
+  
+  // Surface colors
+  surfaceLight: "#FFFFFF",
+  surfaceDark: "#f4f2f2ff",
+  
+  // Background colors
+  backgroundLight: "#fcfafaff",
+  backgroundDark: "#E2E2E2",
+  
+  // ... more color definitions
+} as const;
+```
+
+### Custom Theme Creation
+
+```typescript
+import { createTheme } from '@mui/material/styles';
+import { colors } from './colors';
+
+export const theme = createTheme({
+  palette: {
+    primary: {
+      main: colors.primary,
+      light: colors.primary100,
+      dark: colors.secondary,
+    },
+    secondary: {
+      main: colors.secondary,
+    },
+    success: {
+      main: colors.success,
+    },
+    warning: {
+      main: colors.warning,
+    },
+    error: {
+      main: colors.destructive,
+    },
+  },
+  // ... additional theme configuration
+});
+```
+
+### Branding Customization
+
+1. **Logo**: Replace files in `src/Assets/`
+2. **Colors**: Update `colors.ts` file
+3. **App Name**: Set `APP_NAME` environment variable
+4. **Typography**: Customize Material-UI theme typography
+
+---
+
+## 🔐 Authentication
+
+### Keycloak Integration
+
+The application uses Keycloak for authentication with OAuth2/OpenID Connect:
+
+```typescript
+// Authentication configuration
+const authConfig = {
+  url: process.env.AUTH_API_BASE_URL,
+  realm: 'your-realm',
+  clientId: process.env.CLIENT_ID,
+  onLoad: 'login-required',
+  checkLoginIframe: false,
+};
+```
+
+### Session Management
+
+```typescript
+// Session timeout configuration
+const sessionConfig = {
+  enabled: process.env.ENABLE_SESSION_TIMEOUT === 'true',
+  expiryTime: parseInt(process.env.EXPIRY_TIME_IN_MINUTE || '15'),
+  promptTime: parseInt(process.env.PROMPT_TIME_BEFORE_IDLE_IN_MINUTE || '1'),
+  storageKey: process.env.STORAGE_SESSION_TIME_KEY || 'sessionExpiry',
+};
+```
+
+### Permission-Based Access
+
+```tsx
+import { PermissionWrapper } from 'Components/PermissionWrapper';
+import { PermissionsEnum } from 'Constants/enums';
+
+// Protect components with permissions
+<PermissionWrapper requiredPermissions={[PermissionsEnum.ViewTenant]}>
+  <TenantManagementComponent />
+</PermissionWrapper>
+```
+
+---
+
+## 🔌 API Integration
+
+### Redux Toolkit Query
+
+The application uses RTK Query for API management:
+
+```typescript
+// API slice example
+export const tenantApiSlice = createApi({
+  reducerPath: 'tenantApi',
+  baseQuery: fetchBaseQuery({
+    baseUrl: process.env.TENANT_API_BASE_URL,
+    prepareHeaders: (headers, { getState }) => {
+      const token = selectAuthToken(getState());
+      if (token) {
+        headers.set('authorization', `Bearer ${token}`);
+      }
+      return headers;
+    },
+  }),
+  tagTypes: ['Tenant', 'Plan', 'Subscription'],
+  endpoints: (builder) => ({
+    getTenants: builder.query<TenantResponse, TenantParams>({
+      query: (params) => ({
+        url: '/tenants',
+        params,
+      }),
+      providesTags: ['Tenant'],
+    }),
+    // ... more endpoints
+  }),
+});
+```
+
+### Custom Hooks
+
+```typescript
+// Permission-aware query hook
+export const useQueryHookWithPermission = (
+  permissions: PermissionsEnum[],
+  queryHook: any,
+  params: any,
+  options: any = {}
+) => {
+  const hasPermission = usePermission(permissions);
+  
+  return queryHook(params, {
+    ...options,
+    skip: !hasPermission || options.skip,
+  });
+};
+```
+
+---
+
+## 🧪 Testing
+
+### Test Setup
 
 ```bash
-# Install dependencies
-npm install
+# Run all tests
+npm test
 
-# Run locally
-npm start
+# Run tests without watch mode
+npm run test:no-watch
 
-# Build for production
-npm run build
+# Run tests with coverage
+npm run test:coverage
+
+# Run E2E tests
+npm run cypress
+```
+
+### Testing Utilities
+
+```typescript
+// Component testing example
+import { render, screen } from '@testing-library/react';
+import { Provider } from 'react-redux';
+import { store } from '../redux/store';
+import Button from './Button';
+
+const renderWithProviders = (component: React.ReactElement) => {
+  return render(
+    <Provider store={store}>
+      {component}
+    </Provider>
+  );
+};
+
+test('renders button with correct text', () => {
+  renderWithProviders(<Button>Click me</Button>);
+  expect(screen.getByText('Click me')).toBeInTheDocument();
+});
 ```
 
 ---
 
-## <a id="scripts"></a> Scripts
+## 🚀 Deployment
 
-| Script           | Description                                                                                |
-| ---------------- | ------------------------------------------------------------------------------------------ |
-| npm start        | Runs the app in the development mode                                                       |
-| npm run config   | Generates config file from .env , this file is used for runtime configuration for env vars |
-| npm run build    | Builds the app for production to the `build` folder.                                       |
-| npm run lint     | Checks linting error in code                                                               |
-| npm run lint:fix | Fix all auto-fixable lint errors                                                           |
-| npm run format   | Format all files using prettier                                                            |
+### Build for Production
 
-## Use Case
+```bash
+# Generate configuration
+npm run config
 
-This project serves as a **base SaaS frontend template**.
+# Build the application
+npm run build
 
-- Tenant subscription handling
-- OAuth2-based authentication
-- A dashboard or portal experience
-- Fully rebrandable UI
+# Preview production build
+npm run preview
+```
 
-…you can simply clone this repo, update the `.env` values, swap logos and color themes, and you're ready to go.
+### Environment-Specific Configuration
+
+```bash
+# Development
+npm run config -- --env=development
+
+# Staging
+npm run config -- --env=staging
+
+# Production
+npm run config -- --env=production
+```
 
 ---
+
+## 📚 Available Scripts
+
+| Script | Description |
+|--------|-------------|
+| `npm start` | Start development server with hot reload |
+| `npm run build` | Build production bundle |
+| `npm run config` | Generate runtime configuration from environment variables |
+| `npm test` | Run tests in watch mode |
+| `npm run test:no-watch` | Run tests once |
+| `npm run test:coverage` | Run tests with coverage report |
+| `npm run lint` | Check code for linting errors |
+| `npm run lint:fix` | Fix auto-fixable linting errors |
+| `npm run format` | Format code with Prettier |
+| `npm run cypress` | Open Cypress E2E testing interface |
+| `npm run analyze` | Analyze bundle size |
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guidelines](.github/CONTRIBUTING.md) for details.
+
+### Development Workflow
+
+1. **Fork the repository**
+2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
+3. **Make your changes**
+4. **Run tests**: `npm test`
+5. **Commit your changes**: `git commit -m 'Add amazing feature'`
+6. **Push to the branch**: `git push origin feature/amazing-feature`
+7. **Open a Pull Request**
+
+### Code Standards
+
+- **TypeScript**: All new code must be written in TypeScript
+- **Testing**: New components must include tests
+- **Documentation**: Update documentation for new features
+- **Linting**: Code must pass ESLint checks
+- **Formatting**: Code must be formatted with Prettier
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🆘 Support
+
+- **Issues**: [GitHub Issues](https://github.com/sourcefuse/arc-react-sass-ui/issues)
+- **Email**: support@sourcefuse.com
+
+---
+
+## 🙏 Acknowledgments
+
+- **Material-UI** for the excellent component library
+- **React Boilerplate** for architectural inspiration
+- **Vite** for the blazing-fast build tool
+- **Redux Toolkit** for state management
+- **Keycloak** for authentication
+
+---
+
+<div align="center">
+  <p>Built with ❤️ by <a href="https://www.sourcefuse.com">SourceFuse</a></p>
+  <p>
+    <a href="https://github.com/sourcefuse/arc-react-sass-ui">⭐ Star us on GitHub</a> •
+    <a href="https://github.com/sourcefuse/arc-react-sass-ui/issues">🐛 Report Bug</a> •
+    <a href="https://github.com/sourcefuse/arc-react-sass-ui/issues">💡 Request Feature</a>
+  </p>
+</div>

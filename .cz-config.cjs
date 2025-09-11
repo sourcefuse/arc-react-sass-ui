@@ -26,7 +26,8 @@ module.exports = {
 
   scopes: [
     { name: 'core' },
-    { name: 'docs' },
+    { name: 'readme' },
+    { name: 'UI' },
     { name: 'test cases' },
     { name: 'config changes' },
     { name: 'sonar fixes' },

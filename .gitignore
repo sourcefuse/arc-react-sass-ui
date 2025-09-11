@@ -16,6 +16,8 @@ node_modules
 # production
 x
 /build
+stats.html
+/cypress
 
 # misc
 

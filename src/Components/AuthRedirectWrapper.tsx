@@ -1,4 +1,4 @@
-import { redirectToKeycloakLoginPage } from "Helpers/utils";
+import { redirectToAuthLoginPage } from "Helpers/utils";
 import useAuth from "Hooks/useAuth";
 import useConfig from "Hooks/useConfig";
 import React, { useEffect, useRef } from "react";
@@ -34,7 +34,7 @@ export const AuthRedirectWrapper: React.FC<AuthRedirectWrapperProps> = ({
 
   const shouldRedirect = location.pathname === "/login" && !isLoggedIn;
 
-  const redirectToKeycloak =
+  const redirectToAuthLogin =
     authApiBaseUrl && shouldRedirect && !code && !loginLoading;
 
   useEffect(() => {
@@ -50,10 +50,10 @@ export const AuthRedirectWrapper: React.FC<AuthRedirectWrapperProps> = ({
   }, [code, authApiBaseUrl]);
 
   useEffect(() => {
-    if (redirectToKeycloak) {
-      redirectToKeycloakLoginPage(authApiBaseUrl);
+    if (redirectToAuthLogin) {
+      redirectToAuthLoginPage(authApiBaseUrl);
     }
-  }, [authApiBaseUrl, redirectToKeycloak]);
+  }, [authApiBaseUrl, redirectToAuthLogin]);
 
   if (shouldRedirect) return <BackdropLoader />;
 

@@ -1,15 +1,15 @@
-# ARC React SaaS UI toolkit
+# ARC React SaaS UI boilerplate
 
 <div align="center">
   <img src="src/Assets/logo-header.png" alt="ARC React SaaS UI" width="200" />
   
-  **A comprehensive, production-ready React SaaS UI toolkit and Super Admin Control Plane for building and managing scalable multi-tenant SaaS applications**
+  **A comprehensive, production-ready React SaaS UI boilerplate and Super Admin Control Plane for building and managing scalable multi-tenant SaaS applications**
 
-Built by [SourceFuse](https://www.sourcefuse.com) as a complete solution for SaaS platforms, this project combines a rich component library with powerful administrative capabilities. It serves as both a UI toolkit for building modern SaaS interfaces and a fully functional control plane for managing tenants, subscriptions, billing, and system operations.
+Built by [SourceFuse](https://www.sourcefuse.com) as a complete solution for SaaS platforms, this project combines a rich component with powerful administrative capabilities. It serves as both a UI boilerplate for building modern SaaS interfaces and a fully functional control plane for managing tenants, subscriptions, billing, and system operations.
 
 > ⚠️ **Important**: This is a **frontend-only application** that requires specific backend APIs to function. See [API Dependencies](#api-dependencies) section for required services.
 
-Whether you're building a new SaaS platform or need administrative tools for an existing one, this library provides enterprise-grade components and management features out of the box.
+Whether you're building a new SaaS platform or need administrative tools for an existing one, this boilerplate provides enterprise-grade components and management features out of the box.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![React](https://img.shields.io/badge/React-18.2.0-blue.svg)](https://reactjs.org/)
@@ -44,7 +44,7 @@ Whether you're building a new SaaS platform or need administrative tools for an 
 
 ### **Enterprise-Ready Architecture**
 
-- **Modular Component Library** — 50+ reusable, customizable React components
+- **Modular Components** — 50+ reusable, customizable React components
 - **Modern Build System** — Vite-powered for lightning-fast development and builds
 - **Production Optimized** — Tree-shaking, code splitting, and performance optimizations
 
@@ -245,30 +245,36 @@ src/
 
 ### Environment Setup
 
-1. **Clone the repository:**
+1. **Fork the repository:**
 
-   ```bash
-   git clone https://github.com/sourcefuse/arc-react-sass-ui.git
-   cd arc-react-sass-ui
-   ```
+- Go to [https://github.com/sourcefuse/arc-react-sass-ui](https://github.com/sourcefuse/arc-react-sass-ui) and click "Fork" to create your own copy.
 
-2. **Install dependencies:**
+2. **Clone your fork:**
 
-   ```bash
-   npm install
-   ```
+```bash
+git clone https://github.com/<your-username>/arc-react-sass-ui.git
+cd arc-react-sass-ui
+```
 
-3. **Configure environment variables:**
+3. **Install dependencies:**
 
-   ```bash
-   cp .env.example .env
-   ```
+```bash
+npm install
+```
 
-4. **Start the development server:**
-   ```bash
-   npm start
-   ```
-   Visit `http://localhost:3000` to see the application in action.
+4. **Configure environment variables:**
+
+```bash
+cp .env.example .env
+```
+
+5. **Start the development server:**
+
+```bash
+npm start
+```
+
+Visit `http://localhost:3000` to see the application in action.
 
 ---
 
@@ -700,12 +706,39 @@ We welcome contributions! Please see our [Contributing Guidelines](.github/CONTR
 
 ### Development Workflow
 
-1. **Fork the repository**
-2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
+1. **Clone the repository:**
+
+```bash
+git clone https://github.com/sourcefuse/arc-react-sass-ui.git
+cd arc-react-sass-ui
+```
+
+2. **Create a feature branch**:
+
+```bash
+git checkout -b feature/amazing-feature
+```
+
 3. **Make your changes**
-4. **Run tests**: `npm test`
-5. **Commit your changes**: `git commit -m 'Add amazing feature'`
-6. **Push to the branch**: `git push origin feature/amazing-feature`
+
+4. **Run tests**:
+
+```bash
+npm test
+```
+
+5. **Commit your changes**:
+
+```bash
+git commit -m 'Add amazing feature'
+```
+
+6. **Push to the branch**:
+
+```bash
+git push origin feature/amazing-feature
+```
+
 7. **Open a Pull Request**
 
 ### Code Standards

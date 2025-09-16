@@ -1,10 +1,9 @@
 ---
 name: Feature request
 about: Suggest an idea for this project
-title: '[FEATURE] '
+title: "[FEATURE] "
 labels: enhancement
-assignees: ''
-
+assignees: ""
 ---
 
 **Is your feature request related to a problem? Please describe.**
@@ -26,6 +25,7 @@ Add any other context or screenshots about the feature request here.
 If you have ideas about how this feature could be implemented, please describe them here.
 
 **Acceptance Criteria**
+
 - [ ] Criterion 1
 - [ ] Criterion 2
 - [ ] Criterion 3

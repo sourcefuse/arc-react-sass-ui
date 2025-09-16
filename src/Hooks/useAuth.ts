@@ -1,7 +1,7 @@
 import { FetchBaseQueryError } from "@reduxjs/toolkit/dist/query";
 import { useSnackbar } from "notistack";
 import {
-  IKeycloakCallback,
+  IAuthCallback,
   useLoginMutation,
   useLogoutMutation,
 } from "redux/auth/authApiSlice";
@@ -51,7 +51,7 @@ export default function useAuth() {
    * Performs login with the provided login form values.
    * @param values - credentials.
    */
-  const login = async (payload: IKeycloakCallback) => {
+  const login = async (payload: IAuthCallback) => {
     try {
       const response = await loginApi(payload).unwrap();
       dispatch(setCredentials(response));

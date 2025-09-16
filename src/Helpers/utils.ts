@@ -1,5 +1,5 @@
 import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
-import { KEYCLOAK_AUTH_LOGIN_URL } from "Constants/apiConfig";
+import { AUTH_LOGIN_URL } from "Constants/apiConfig";
 import { format } from "date-fns";
 import CryptoJS from "crypto-js"; // use `crypto-js` for browser-safe hashing
 
@@ -34,9 +34,9 @@ export const getValue = (obj: AnyObject, key: string) => {
   }, obj);
 };
 
-export const redirectToKeycloakLoginPage = (authApiBaseUrl: string) => {
+export const redirectToAuthLoginPage = (authApiBaseUrl: string) => {
   const form = document.createElement("form");
-  form.action = `${authApiBaseUrl}${KEYCLOAK_AUTH_LOGIN_URL}`;
+  form.action = `${authApiBaseUrl}${AUTH_LOGIN_URL}`;
   form.style.display = "none";
 
   document.body.appendChild(form);

@@ -100,6 +100,11 @@ Whether you're building a new SaaS platform or need administrative tools for an 
 ## Preview
 
 Here's what the dashboard looks like:
+
+![alt text](<src/Assets/login page.png>)
+
+---
+
 ![alt text](src/Assets/dashboard.png)
 
 ---
@@ -514,6 +519,76 @@ export const theme = createTheme({
 ---
 
 ## Authentication
+
+### Adding a New OAuth Provider
+
+#### Prerequisites
+
+Before proceeding, ensure you have the following:
+
+- Details of the OAuth provider you want to add (such as `name`, `loginPath`, etc.)
+- Access to the project files, specifically:
+  - `src/Constants/enums/AuthProvider.enum.ts`
+  - `src/Constants/AuthProviders.config.ts`
+
+#### Steps to Add a New OAuth Provider
+
+#### 1. Add the New OAuth Provider to the `AuthProvider.enum.ts`
+
+In the `src/Constants/enums/AuthProvider.enum.ts` file, add the new OAuth provider to the `AuthProvider` enum.
+
+Example:
+
+```typescript
+export enum AuthProvider {
+  KEYCLOAK = "keycloak",
+  COGNITO = "cognito",
+  // Add the new provider here
+  GOOGLE = "google", // New provider example
+  GITHUB = "github", // New provider example
+}
+```
+
+#### 2. Update AuthProviderConfig in `AuthProviders.config.ts`
+
+The AuthProviderConfig object in `src/Constants/AuthProviders.config.ts` stores configuration for each OAuth provider, including the display name and login path.
+
+To add your new provider, add an entry for it in this file:
+
+```typescript
+import { AuthProvider } from "./enums/AuthProvider.enum";
+
+export const AuthProviderConfig: Record<
+  AuthProvider,
+  { name: string; loginPath: string }
+> = {
+  [AuthProvider.KEYCLOAK]: {
+    name: "Sign in with Keycloak",
+    loginPath: "/auth/login",
+  },
+  [AuthProvider.COGNITO]: {
+    name: "Sign in with Cognito",
+    loginPath: "/auth/cognito/login",
+  },
+  // Add your new provider configuration here
+  [AuthProvider.GOOGLE]: {
+    name: "Sign in with Google",
+    loginPath: "/auth/google/login", // Update this with your provider's login URL
+  },
+  [AuthProvider.GITHUB]: {
+    name: "Sign in with GitHub",
+    loginPath: "/auth/github/login", // Update this with your provider's login URL
+  },
+};
+```
+
+Make sure the loginPath is set to the correct URL for your OAuth provider’s login endpoint.
+
+#### 3. Update the `Login.tsx` UI
+
+The login page will automatically render buttons for the new providers because the AuthProviders.getProviders() function dynamically generates them from the AuthProviderConfig.
+
+Ensure that your `src/Pages/Login/Login.tsx` is correctly rendering all the providers. It should look like this:
 
 ### OAuth2/OpenID Connect Integration
 

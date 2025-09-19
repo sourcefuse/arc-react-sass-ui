@@ -1,9 +1,10 @@
 import { authorizationFunctions } from "Helpers/authorizationFunctions";
 import { Navigate, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 export interface ProtectedRouteWrapperProps {
   children: React.ReactNode;
-  isAuthorized?: (...args: any[]) => boolean; // NOSONAR
+  isAuthorized?: () => boolean; // NOSONAR
 }
 
 /**

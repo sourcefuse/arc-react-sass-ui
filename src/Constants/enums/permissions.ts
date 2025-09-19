@@ -83,7 +83,7 @@ export enum PermissionsEnum {
   DeleteFeatureValues = "DeleteFeatureValues",
 
   ViewFeatureNum = "1",
-  CreateFeatureNum = "2",
+  CreateFeatureNum = "13",
   UpdateFeatureNum = "3",
   DeleteFeatureNum = "4",
 

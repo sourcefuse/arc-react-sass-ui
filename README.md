@@ -1,21 +1,22 @@
-# ARC React SaaS UI
+# ARC React SaaS UI boilerplate
 
 <div align="center">
   <img src="src/Assets/logo-header.png" alt="ARC React SaaS UI" width="200" />
   
-  **A comprehensive, production-ready React component library and Super Admin Control Plane for building and managing scalable multi-tenant SaaS applications**
+  **A comprehensive, production-ready React SaaS UI boilerplate and Super Admin Control Plane for building and managing scalable multi-tenant SaaS applications**
 
-  Built by [SourceFuse](https://www.sourcefuse.com) as a complete solution for SaaS platforms, this project combines a rich component library with powerful administrative capabilities. It serves as both a UI toolkit for building modern SaaS interfaces and a fully functional control plane for managing tenants, subscriptions, billing, and system operations.
+Built by [SourceFuse](https://www.sourcefuse.com) as a complete solution for SaaS platforms, this project combines a rich component with powerful administrative capabilities. It serves as both a UI boilerplate for building modern SaaS interfaces and a fully functional control plane for managing tenants, subscriptions, billing, and system operations.
 
-  > ⚠️ **Important**: This is a **frontend-only application** that requires specific backend APIs to function. See [API Dependencies](#api-dependencies) section for required services.
+> ⚠️ **Important**: This is a **frontend-only application** that requires specific backend APIs to function. See [API Dependencies](#api-dependencies) section for required services.
 
-  Whether you're building a new SaaS platform or need administrative tools for an existing one, this library provides enterprise-grade components and management features out of the box.
-  
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-  [![React](https://img.shields.io/badge/React-18.2.0-blue.svg)](https://reactjs.org/)
-  [![TypeScript](https://img.shields.io/badge/TypeScript-4.9.3-blue.svg)](https://www.typescriptlang.org/)
-  [![Material-UI](https://img.shields.io/badge/Material--UI-5.10.15-blue.svg)](https://mui.com/)
-  [![Vite](https://img.shields.io/badge/Vite-4.1.5-646CFF.svg)](https://vitejs.dev/)
+Whether you're building a new SaaS platform or need administrative tools for an existing one, this boilerplate provides enterprise-grade components and management features out of the box.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![React](https://img.shields.io/badge/React-18.2.0-blue.svg)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-4.9.3-blue.svg)](https://www.typescriptlang.org/)
+[![Material-UI](https://img.shields.io/badge/Material--UI-5.10.15-blue.svg)](https://mui.com/)
+[![Vite](https://img.shields.io/badge/Vite-4.1.5-646CFF.svg)](https://vitejs.dev/)
+
 </div>
 
 ---
@@ -29,7 +30,6 @@
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Usage](#usage)
-- [Components](#components)
 - [Theming](#theming)
 - [Authentication](#authentication)
 - [API Integration](#api-integration)
@@ -44,13 +44,13 @@
 
 ### **Enterprise-Ready Architecture**
 
-- **Modular Component Library** — 50+ reusable, customizable React components
+- **Modular Components** — 50+ reusable, customizable React components
 - **Modern Build System** — Vite-powered for lightning-fast development and builds
 - **Production Optimized** — Tree-shaking, code splitting, and performance optimizations
 
 ### **Authentication & Security**
 
-- **Keycloak Integration** — OAuth2/OpenID Connect authentication
+- **OAuth2/OpenID Connect Integration** — Secure authentication with industry standards
 - **Session Management** — Configurable session timeout and idle detection
 - **Permission-Based Access** — Role-based component and route protection
 - **Secure Token Handling** — Automatic token refresh and validation
@@ -100,6 +100,11 @@
 ## Preview
 
 Here's what the dashboard looks like:
+
+![alt text](<src/Assets/login page.png>)
+
+---
+
 ![alt text](src/Assets/dashboard.png)
 
 ---
@@ -114,30 +119,33 @@ Here's what the dashboard looks like:
 
 ### **Required Backend Services**
 
-| Service | Environment Variable | Purpose | Required |
-|---------|---------------------|---------|----------|
-| **Authentication API** | `AUTH_API_BASE_URL` | Keycloak OAuth2/OpenID Connect | ✅ **Required** |
-| **Main Application API** | `APP_API_BASE_URL` | Core business logic, CRUD operations | ✅ **Required** |
-| **Tenant Management API** | `TENANT_API_BASE_URL` | Tenant lifecycle, provisioning, management | ✅ **Required** |
-| **Audit API** | `AUDIT_API_BASE_URL` | Audit logging, activity tracking | ✅ **Required** |
-| **Observability Dashboard** | `GRAFANA_URL` | Monitoring, metrics, system health | ❌ Optional |
+| Service                     | Environment Variable  | Purpose                                             | Required        |
+| --------------------------- | --------------------- | --------------------------------------------------- | --------------- |
+| **Authentication API**      | `AUTH_API_BASE_URL`   | OAuth2/OpenID Connect authentication server Connect | ✅ **Required** |
+| **Main Application API**    | `APP_API_BASE_URL`    | Core business logic, CRUD operations                | ✅ **Required** |
+| **Tenant Management API**   | `TENANT_API_BASE_URL` | Tenant lifecycle, provisioning, management          | ✅ **Required** |
+| **Audit API**               | `AUDIT_API_BASE_URL`  | Audit logging, activity tracking                    | ✅ **Required** |
+| **Observability Dashboard** | `GRAFANA_URL`         | Monitoring, metrics, system health                  | ❌ Optional     |
 
 ### **API Endpoints Expected**
 
 The application expects the following API endpoints to be available:
 
 #### **Authentication Endpoints**
+
 - `POST /auth/login` - User authentication
 - `POST /auth/refresh` - Token refresh
 - `POST /auth/logout` - User logout
 
 #### **Tenant Management Endpoints**
+
 - `GET /tenants` - List tenants
 - `POST /tenants` - Create tenant
 - `PUT /tenants/:id` - Update tenant
 - `DELETE /tenants/:id` - Delete tenant
 
 #### **Plan Management Endpoints**
+
 - `GET /plans` - List subscription plans
 - `POST /plans` - Create plan
 - `PUT /plans/:id` - Update plan
@@ -145,17 +153,20 @@ The application expects the following API endpoints to be available:
 - `POST /plan-items` - Create plan item
 
 #### **Feature Management Endpoints**
+
 - `GET /features` - List features
 - `POST /features` - Upload features via CSV
 - `PUT /features/:id` - Update feature
 
 #### **Billing & Payment Endpoints**
+
 - `GET /invoices` - List invoices
 - `POST /invoices` - Generate invoice
 - `GET /payments` - List payments
 - `POST /payments` - Process payment
 
 #### **System Configuration Endpoints**
+
 - `GET /settings` - Get system settings
 - `PUT /settings` - Update system settings
 - `GET /clusters` - List clusters
@@ -234,35 +245,41 @@ src/
 
 - **Node.js** 16.0 or higher
 - **npm** 8.0 or higher
-- **Keycloak** instance (for authentication)
+- **OAuth2/OpenID Connect** Provider (e.g., Keycloak, Auth0, Azure AD, etc.)
 - **Backend APIs** (see [API Dependencies](#api-dependencies) section)
 
 ### Environment Setup
 
-1. **Clone the repository:**
+1. **Fork the repository:**
 
-   ```bash
-   git clone https://github.com/sourcefuse/arc-react-sass-ui.git
-   cd arc-react-sass-ui
-   ```
+- Go to [https://github.com/sourcefuse/arc-react-sass-ui](https://github.com/sourcefuse/arc-react-sass-ui) and click "Fork" to create your own copy.
 
-2. **Install dependencies:**
+2. **Clone your fork:**
 
-   ```bash
-   npm install
-   ```
+```bash
+git clone https://github.com/<your-username>/arc-react-sass-ui.git
+cd arc-react-sass-ui
+```
 
-3. **Configure environment variables:**
+3. **Install dependencies:**
 
-   ```bash
-   cp .env.example .env
-   ```
+```bash
+npm install
+```
 
-4. **Start the development server:**
-   ```bash
-   npm start
-   ```
-   Visit `http://localhost:3000` to see the application in action.
+4. **Configure environment variables:**
+
+```bash
+cp .env.example .env
+```
+
+5. **Start the development server:**
+
+```bash
+npm start
+```
+
+Visit `http://localhost:3000` to see the application in action.
 
 ---
 
@@ -274,7 +291,7 @@ Create a `.env` file in the root directory with the following variables:
 
 ```env
 # Core Configuration
-CLIENT_ID=your-keycloak-client-id
+CLIENT_ID=your-oauth-client-id
 APP_API_BASE_URL=https://api.yourdomain.com
 AUTH_API_BASE_URL=https://auth.yourdomain.com
 TENANT_API_BASE_URL=https://tenant-api.yourdomain.com
@@ -302,18 +319,18 @@ ENABLE_HASH_SECRET=true
 
 ### Configuration Reference
 
-| Variable                            | Description                        | Type      | Required | Default |
-| ----------------------------------- | ---------------------------------- | --------- | -------- | ------- |
-| `CLIENT_ID`                         | Keycloak client identifier         | `string`  | ✅       | -       |
-| `AUTH_API_BASE_URL`                 | Keycloak authentication server URL | `string`  | ✅       | -       |
-| `APP_API_BASE_URL`                  | Main backend API URL               | `string`  | ✅       | -       |
-| `TENANT_API_BASE_URL`               | Tenant management API URL          | `string`  | ✅       | -       |
-| `AUDIT_API_BASE_URL`                | Audit logging API URL              | `string`  | ✅       | -       |
-| `ENABLE_SESSION_TIMEOUT`            | Enable session timeout management  | `boolean` | ❌       | `false` |
-| `EXPIRY_TIME_IN_MINUTE`             | Session expiry time in minutes     | `number`  | ❌       | `15`    |
-| `PROMPT_TIME_BEFORE_IDLE_IN_MINUTE` | Idle warning time in minutes       | `number`  | ❌       | `1`     |
-| `APP_NAME`                          | Application name for branding      | `string`  | ✅       | -       |
-| `APP_DESCRIPTION`                   | Application description            | `string`  | ✅       | -       |
+| Variable                            | Description                       | Type      | Required | Default |
+| ----------------------------------- | --------------------------------- | --------- | -------- | ------- |
+| `CLIENT_ID`                         | OAuth client identifier           | `string`  | ✅       | -       |
+| `AUTH_API_BASE_URL`                 | OAuth authentication server URL   | `string`  | ✅       | -       |
+| `APP_API_BASE_URL`                  | Main backend API URL              | `string`  | ✅       | -       |
+| `TENANT_API_BASE_URL`               | Tenant management API URL         | `string`  | ✅       | -       |
+| `AUDIT_API_BASE_URL`                | Audit logging API URL             | `string`  | ✅       | -       |
+| `ENABLE_SESSION_TIMEOUT`            | Enable session timeout management | `boolean` | ❌       | `false` |
+| `EXPIRY_TIME_IN_MINUTE`             | Session expiry time in minutes    | `number`  | ❌       | `15`    |
+| `PROMPT_TIME_BEFORE_IDLE_IN_MINUTE` | Idle warning time in minutes      | `number`  | ❌       | `1`     |
+| `APP_NAME`                          | Application name for branding     | `string`  | ✅       | -       |
+| `APP_DESCRIPTION`                   | Application description           | `string`  | ✅       | -       |
 
 ---
 
@@ -324,23 +341,27 @@ ENABLE_HASH_SECRET=true
 This application serves as a **Super Admin Control Plane** for managing multi-tenant SaaS operations:
 
 #### **Tenant Management**
+
 - **Tenant Provisioning** - Create and provision new tenant instances with automated setup
 - **Status Monitoring** - Track tenant status (active, provisioning, suspended, inactive)
 - **Configuration** - Manage tenant-specific settings, tiers, and feature assignments
 - **Bulk Operations** - View and manage multiple tenants from a centralized interface
 
 #### **Subscription & Plan Management**
+
 - **Plan Configuration** - Create and manage subscription plans with different tiers
 - **Plan Items** - Configure individual plan components and features
 - **Billing Cycles** - Set up and manage billing periods and payment terms
 - **Status Tracking** - Monitor plan status and subscription states
 
 #### **Feature Management**
+
 - **Feature Upload** - Bulk upload features via CSV files
 - **Feature Assignment** - Configure which features are available per plan or tenant
 - **Feature Flags** - Enable/disable features dynamically
 
 #### **System Administration**
+
 - **Admin Settings** - Configure system-wide parameters:
   - Observability dashboard URLs
   - Default pagination settings (rows per page)
@@ -351,16 +372,19 @@ This application serves as a **Super Admin Control Plane** for managing multi-te
 - **Cluster Configuration** - Basic deployment environment management
 
 #### **Lead Management**
+
 - **Lead Tracking** - Manage prospects and potential customers
 - **Conversion Workflow** - Convert leads to active tenants
 - **Auto-close Configuration** - Set automatic lead closure after inactivity periods
 
 #### **Billing & Payments**
+
 - **Invoice Management** - Generate, track, and manage invoices
 - **Payment Processing** - Handle payment transactions and status tracking
 - **Billing Analytics** - Monitor payment status and billing metrics
 
 #### **Dashboard & Analytics**
+
 - **Real-time Metrics** - View tenant counts, plan statistics, and system health
 - **Visual Charts** - Pie charts for support tickets and popular plans
 - **Recent Activity** - Quick access to recent tenant activities and changes
@@ -418,46 +442,6 @@ function MyPage() {
   );
 }
 ```
-
----
-
-## Components
-
-### Core Components
-
-| Component   | Description                        | Features                                      |
-| ----------- | ---------------------------------- | --------------------------------------------- |
-| **AppBar**  | Application header with navigation | User menu, notifications, theme toggle        |
-| **SideNav** | Sidebar navigation                 | Permission-based visibility, nested menus     |
-| **Table**   | Advanced data table                | Filtering, sorting, pagination, row selection |
-| **Button**  | Button variants                    | Multiple styles, loading states, icons        |
-| **Forms**   | Form components                    | Validation, error handling, field types       |
-| **Modal**   | Modal dialogs                      | Customizable, accessible, responsive          |
-
-### Data Visualization
-
-| Component          | Description            | Use Case                                   |
-| ------------------ | ---------------------- | ------------------------------------------ |
-| **CustomPieChart** | Interactive pie charts | Dashboard metrics, status distribution     |
-| **StatsCard**      | Metric display cards   | KPI visualization, quick stats             |
-| **StatusChip**     | Status indicators      | Tenant status, plan status, payment status |
-
-### Form Components
-
-| Component        | Description           | Features                                |
-| ---------------- | --------------------- | --------------------------------------- |
-| **Input**        | Text input fields     | Validation, error states, helper text   |
-| **DatePicker**   | Date selection        | Range selection, validation, formatting |
-| **AutoComplete** | Autocomplete inputs   | Search, multi-select, async loading     |
-| **FileUpload**   | File upload component | Drag & drop, validation, progress       |
-
-### Layout Components
-
-| Component      | Description            | Features                            |
-| -------------- | ---------------------- | ----------------------------------- |
-| **PageHeader** | Page title and actions | Breadcrumbs, action buttons, search |
-| **PagePaper**  | Content container      | Consistent spacing, elevation       |
-| **DetailCard** | Information display    | Structured data presentation        |
 
 ---
 
@@ -536,9 +520,79 @@ export const theme = createTheme({
 
 ## Authentication
 
-### Keycloak Integration
+### Adding a New OAuth Provider
 
-The application uses Keycloak for authentication with OAuth2/OpenID Connect:
+#### Prerequisites
+
+Before proceeding, ensure you have the following:
+
+- Details of the OAuth provider you want to add (such as `name`, `loginPath`, etc.)
+- Access to the project files, specifically:
+  - `src/Constants/enums/AuthProvider.enum.ts`
+  - `src/Constants/AuthProviders.config.ts`
+
+#### Steps to Add a New OAuth Provider
+
+#### 1. Add the New OAuth Provider to the `AuthProvider.enum.ts`
+
+In the `src/Constants/enums/AuthProvider.enum.ts` file, add the new OAuth provider to the `AuthProvider` enum.
+
+Example:
+
+```typescript
+export enum AuthProvider {
+  KEYCLOAK = "keycloak",
+  COGNITO = "cognito",
+  // Add the new provider here
+  GOOGLE = "google", // New provider example
+  GITHUB = "github", // New provider example
+}
+```
+
+#### 2. Update AuthProviderConfig in `AuthProviders.config.ts`
+
+The AuthProviderConfig object in `src/Constants/AuthProviders.config.ts` stores configuration for each OAuth provider, including the display name and login path.
+
+To add your new provider, add an entry for it in this file:
+
+```typescript
+import { AuthProvider } from "./enums/AuthProvider.enum";
+
+export const AuthProviderConfig: Record<
+  AuthProvider,
+  { name: string; loginPath: string }
+> = {
+  [AuthProvider.KEYCLOAK]: {
+    name: "Sign in with Keycloak",
+    loginPath: "/auth/login",
+  },
+  [AuthProvider.COGNITO]: {
+    name: "Sign in with Cognito",
+    loginPath: "/auth/cognito/login",
+  },
+  // Add your new provider configuration here
+  [AuthProvider.GOOGLE]: {
+    name: "Sign in with Google",
+    loginPath: "/auth/google/login", // Update this with your provider's login URL
+  },
+  [AuthProvider.GITHUB]: {
+    name: "Sign in with GitHub",
+    loginPath: "/auth/github/login", // Update this with your provider's login URL
+  },
+};
+```
+
+Make sure the loginPath is set to the correct URL for your OAuth provider’s login endpoint.
+
+#### 3. Update the `Login.tsx` UI
+
+The login page will automatically render buttons for the new providers because the AuthProviders.getProviders() function dynamically generates them from the AuthProviderConfig.
+
+Ensure that your `src/Pages/Login/Login.tsx` is correctly rendering all the providers. It should look like this:
+
+### OAuth2/OpenID Connect Integration
+
+The application supports OAuth2/OpenID Connect authentication with various providers:
 
 ```typescript
 // Authentication configuration
@@ -546,6 +600,8 @@ const authConfig = {
   url: process.env.AUTH_API_BASE_URL,
   realm: "your-realm",
   clientId: process.env.CLIENT_ID,
+  redirectUri: process.env.REDIRECT_URI,
+  postLogoutRedirectUri: process.env.POST_LOGOUT_REDIRECT_URI,
   onLoad: "login-required",
   checkLoginIframe: false,
 };
@@ -725,12 +781,39 @@ We welcome contributions! Please see our [Contributing Guidelines](.github/CONTR
 
 ### Development Workflow
 
-1. **Fork the repository**
-2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
+1. **Clone the repository:**
+
+```bash
+git clone https://github.com/sourcefuse/arc-react-sass-ui.git
+cd arc-react-sass-ui
+```
+
+2. **Create a feature branch**:
+
+```bash
+git checkout -b feature/amazing-feature
+```
+
 3. **Make your changes**
-4. **Run tests**: `npm test`
-5. **Commit your changes**: `git commit -m 'Add amazing feature'`
-6. **Push to the branch**: `git push origin feature/amazing-feature`
+
+4. **Run tests**:
+
+```bash
+npm test
+```
+
+5. **Commit your changes**:
+
+```bash
+git commit -m 'Add amazing feature'
+```
+
+6. **Push to the branch**:
+
+```bash
+git push origin feature/amazing-feature
+```
+
 7. **Open a Pull Request**
 
 ### Code Standards
@@ -762,7 +845,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **React Boilerplate** for architectural inspiration
 - **Vite** for the blazing-fast build tool
 - **Redux Toolkit** for state management
-- **Keycloak** for authentication
+- **OAuth2/OpenID** Connect community for authentication standards
 
 ---
 

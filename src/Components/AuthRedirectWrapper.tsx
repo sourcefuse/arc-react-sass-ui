@@ -1,4 +1,3 @@
-import { redirectToKeycloakLoginPage } from "Helpers/utils";
 import useAuth from "Hooks/useAuth";
 import useConfig from "Hooks/useConfig";
 import React, { useEffect, useRef } from "react";
@@ -21,21 +20,14 @@ export const AuthRedirectWrapper: React.FC<AuthRedirectWrapperProps> = ({
   children,
 }) => {
   const { isLoggedIn, login, loginLoading } = useAuth();
-
   const {
     config: { authApiBaseUrl },
   } = useConfig();
   const location = useLocation();
   const [searchParams] = useSearchParams();
-
   const isLoggedInRef = useRef(isLoggedIn);
 
   const code = searchParams.get("code");
-
-  const shouldRedirect = location.pathname === "/login" && !isLoggedIn;
-
-  const redirectToKeycloak =
-    authApiBaseUrl && shouldRedirect && !code && !loginLoading;
 
   useEffect(() => {
     if (
@@ -47,15 +39,11 @@ export const AuthRedirectWrapper: React.FC<AuthRedirectWrapperProps> = ({
       isLoggedInRef.current = true;
       login({ code });
     }
-  }, [code, authApiBaseUrl]);
+  }, [code, authApiBaseUrl, location.pathname, login]);
 
-  useEffect(() => {
-    if (redirectToKeycloak) {
-      redirectToKeycloakLoginPage(authApiBaseUrl);
-    }
-  }, [authApiBaseUrl, redirectToKeycloak]);
+  if (loginLoading) return <BackdropLoader />;
 
-  if (shouldRedirect) return <BackdropLoader />;
+  if (isLoggedIn) return <Navigate to={"/dashboard"} replace />;
 
-  return <>{isLoggedIn ? <Navigate to={"/dashboard"} replace /> : children}</>;
+  return <>{children}</>;
 };

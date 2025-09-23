@@ -11,21 +11,21 @@ export interface ICredentials extends ILoginForm {
   client_id: string;
 }
 
-export interface IKeycloakCallback {
+export interface IAuthCallback {
   code: string;
 }
 
-export interface IKeycloakAuthRedirectUrl {
+export interface IAuthRedirectUrl {
   redirectUrl: string;
 }
 
 export const authApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     login: builder.mutation({
-      query: (keycloakCode: IKeycloakCallback) => ({
+      query: (authCode: IAuthCallback) => ({
         url: "/auth/callback",
         method: "POST",
-        body: { ...keycloakCode },
+        body: { ...authCode },
       }),
     }),
     logout: builder.mutation({

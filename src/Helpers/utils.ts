@@ -1,7 +1,8 @@
 import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
-import { KEYCLOAK_AUTH_LOGIN_URL } from "Constants/apiConfig";
 import { format } from "date-fns";
 import CryptoJS from "crypto-js"; // use `crypto-js` for browser-safe hashing
+import { AuthProvider } from "Constants/enums/AuthProvider.enum";
+import { AuthProviderConfig } from "Constants/AuthProviders.config";
 
 export interface AnyObject {
   [key: string]: any; // NOSONAR
@@ -34,11 +35,18 @@ export const getValue = (obj: AnyObject, key: string) => {
   }, obj);
 };
 
-export const redirectToKeycloakLoginPage = (authApiBaseUrl: string) => {
+export const redirectToAuthLoginPage = (
+  authApiBaseUrl: string,
+  provider: AuthProvider
+) => {
+  const providerConfig = AuthProviderConfig[provider];
+  if (!providerConfig) {
+    throw new Error(`Unsupported provider: ${provider}`);
+  }
+  const loginUrl = `${authApiBaseUrl}${providerConfig.loginPath}`;
   const form = document.createElement("form");
-  form.action = `${authApiBaseUrl}${KEYCLOAK_AUTH_LOGIN_URL}`;
+  form.action = loginUrl;
   form.style.display = "none";
-
   document.body.appendChild(form);
   form.submit();
 };

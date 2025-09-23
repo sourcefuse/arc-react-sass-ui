@@ -95,6 +95,7 @@ export const colors: { [key: string]: string } = {
   grayLight: "#D2D2D2",
 
   text: "#844242ff",
+  blackText: "#000000",
 
   // Plan
   planOne: "#fff5f5ff",

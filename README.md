@@ -1,9 +1,10 @@
 # ARC React SaaS UI boilerplate
 
-<div align="center">
-  <img src="src/Assets/logo-header.png" alt="ARC React SaaS UI" width="200" />
-  
-  **A comprehensive, production-ready React SaaS UI boilerplate and Super Admin Control Plane for building and managing scalable multi-tenant SaaS applications**
+<p align="center">
+<img src="https://github.com/sourcefuse/arc-react-sass-ui/blob/main/src/Assets/logo-dark-bg.png?raw=true" width="180"  alt="ARC Logo" />
+</p>
+
+**A comprehensive, production-ready React SaaS UI boilerplate and Super Admin Control Plane for building and managing scalable multi-tenant SaaS applications**
 
 Built by [SourceFuse](https://www.sourcefuse.com) as a complete solution for SaaS platforms, this project combines a rich component with powerful administrative capabilities. It serves as both a UI boilerplate for building modern SaaS interfaces and a fully functional control plane for managing tenants, subscriptions, billing, and system operations.
 
@@ -101,15 +102,21 @@ Whether you're building a new SaaS platform or need administrative tools for an 
 
 Here's what the dashboard looks like:
 
-![alt text](<src/Assets/login page.png>)
+<p align="center">
+<img src="https://github.com/sourcefuse/arc-react-sass-ui/blob/main/src/Assets/login%20page.png?raw=true" alt="Login Page" />
+</p>
 
 ---
 
-![alt text](src/Assets/dashboard.png)
+<p align="center">
+<img src="https://github.com/sourcefuse/arc-react-sass-ui/blob/main/src/Assets/dashboard.png?raw=true" alt="Dashboard" />
+</p>
 
 ---
 
-![alt text](src/Assets/tenants.png)
+<p align="center">
+  <img src="https://github.com/sourcefuse/arc-react-sass-ui/blob/main/src/Assets/tenants.png?raw=true" alt="Tenants" />
+</p>
 
 ---
 

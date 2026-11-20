@@ -111,5 +111,10 @@
     "cz-customizable": {
       "config": "./.cz-config.cjs"
     }
+  },
+  "overrides": {
+    "@cypress/request": {
+      "form-data": "2.5.4"
+    }
   }
 }
